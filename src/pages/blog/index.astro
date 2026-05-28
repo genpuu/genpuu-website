@@ -1,0 +1,193 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getCollection } from "astro:content";
+
+const allPosts = await getCollection("blog");
+
+const categories = [
+  { slug: "all", label: "すべて" },
+  { slug: "相続", label: "相続" },
+  { slug: "空き家活用", label: "空き家" },
+  { slug: "不動産", label: "不動産" },
+];
+
+// Group by category
+const grouped: Record<string, typeof allPosts> = {};
+for (const post of allPosts) {
+  const cat = post.data.category;
+  if (!grouped[cat]) grouped[cat] = [];
+  grouped[cat].push(post);
+}
+// Sort each group by order
+for (const cat of Object.keys(grouped)) {
+  grouped[cat].sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
+}
+
+const categoryTagMap: Record<string, string> = {
+  "相続": "相続",
+  "空き家活用": "空き家",
+  "不動産": "不動産",
+};
+---
+
+<Base title="コラム一覧" description="相続・空き家・不動産に関するお役立ち情報を発信しています。福岡県の不動産に関する知識を分かりやすく解説。">
+
+  <section class="blog-hero">
+    <div class="container">
+      <h1 class="blog-hero-title">コラム</h1>
+      <p class="blog-hero-desc">相続・空き家・不動産に関するお役立ち情報</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- Category filter -->
+      <div class="category-tabs" id="category-tabs">
+        {categories.map((cat) => (
+          <button
+            class={`category-tab ${cat.slug === "all" ? "active" : ""}`}
+            data-category={cat.slug}
+          >
+            {cat.label}
+          </button>
+        ))}
+      </div>
+
+      <!-- All posts -->
+      <div class="blog-list">
+        {allPosts
+          .sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0))
+          .map((post) => (
+            <a
+              href={`/blog/${post.id}/`}
+              class="blog-list-card fade-in"
+              data-category={post.data.category}
+            >
+              <div class="blog-list-meta">
+                <span class="blog-list-category">
+                  {categoryTagMap[post.data.category] ?? post.data.category}
+                </span>
+                {post.data.series && (
+                  <span class="blog-list-series">{post.data.series}</span>
+                )}
+              </div>
+              <h2 class="blog-list-title">{post.data.title}</h2>
+            </a>
+          ))}
+      </div>
+
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  .blog-hero {
+    background: linear-gradient(135deg, #1a3a2a 0%, #2e8b57 100%);
+    color: #fff;
+    padding: 80px 0 48px;
+    text-align: center;
+  }
+  .blog-hero-title {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+  }
+  .blog-hero-desc {
+    font-size: 1rem;
+    opacity: 0.8;
+  }
+
+  .category-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+  }
+  .category-tab {
+    padding: 8px 20px;
+    border-radius: 50px;
+    border: 2px solid var(--color-border);
+    background: #fff;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s;
+    font-family: var(--font-body);
+  }
+  .category-tab:hover,
+  .category-tab.active {
+    background: var(--color-primary);
+    color: #fff;
+    border-color: var(--color-primary);
+  }
+
+  .blog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .blog-list-card {
+    display: block;
+    padding: 24px;
+    background: var(--color-bg-light);
+    border-radius: 12px;
+    text-decoration: none;
+    border: 1px solid var(--color-border);
+    transition: all 0.3s;
+  }
+  .blog-list-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    transform: translateX(4px);
+  }
+  .blog-list-card.hidden {
+    display: none;
+  }
+  .blog-list-meta {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+    align-items: center;
+  }
+  .blog-list-category {
+    display: inline-block;
+    background: var(--color-primary-bg);
+    color: var(--color-primary-dark);
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+  .blog-list-series {
+    font-size: 0.75rem;
+    color: var(--color-text-light);
+  }
+  .blog-list-title {
+    font-size: 1rem;
+    color: var(--color-text);
+    font-weight: 500;
+    line-height: 1.6;
+  }
+</style>
+
+<script>
+  const tabs = document.querySelectorAll<HTMLButtonElement>(".category-tab");
+  const cards = document.querySelectorAll<HTMLElement>(".blog-list-card");
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      tabs.forEach((t) => t.classList.remove("active"));
+      tab.classList.add("active");
+      const cat = tab.dataset.category;
+      cards.forEach((card) => {
+        if (cat === "all" || card.dataset.category === cat) {
+          card.classList.remove("hidden");
+        } else {
+          card.classList.add("hidden");
+        }
+      });
+    });
+  });
+</script>

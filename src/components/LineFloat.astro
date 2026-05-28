@@ -1,0 +1,70 @@
+---
+// LINE固定フローティングボタン（全ページ右下に表示）
+---
+
+<div class="line-float" id="line-float">
+  <a href="#LINE_URL" class="line-float-btn" aria-label="LINEで相談する">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.82 2 10.5c0 4.21 3.74 7.74 8.79 8.4.34.07.81.23.93.52.1.27.07.68.03.95l-.15.91c-.05.28-.22 1.1.96.6s6.37-3.75 8.69-6.42C23.08 13.4 22 11.17 22 10.5 22 5.82 17.52 2 12 2z"/></svg>
+    <span class="line-float-text">LINE相談</span>
+  </a>
+</div>
+
+<style>
+  .line-float {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 999;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+  }
+  .line-float.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .line-float-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--color-line);
+    color: #fff;
+    padding: 14px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 20px rgba(6, 199, 85, 0.4);
+    transition: all 0.3s;
+  }
+  .line-float-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 24px rgba(6, 199, 85, 0.5);
+    color: #fff;
+  }
+
+  @media (max-width: 768px) {
+    .line-float {
+      bottom: 16px;
+      right: 16px;
+    }
+    .line-float-text {
+      display: none;
+    }
+    .line-float-btn {
+      padding: 14px;
+      border-radius: 50%;
+    }
+  }
+</style>
+
+<script>
+  const lineFloat = document.getElementById("line-float");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      lineFloat?.classList.add("show");
+    } else {
+      lineFloat?.classList.remove("show");
+    }
+  });
+</script>

@@ -1,0 +1,208 @@
+---
+import Base from "../layouts/Base.astro";
+---
+
+<Base title="保有不動産の売却相談" description="空き家・土地・相続不動産の売却相談。査定から売却、解体まで一括で対応します。">
+
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-hero-title">保有不動産の売却相談</h1>
+      <p class="page-hero-desc">Sell</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="page-content fade-in">
+        <p class="lead-text">
+          空き家・土地・相続した不動産の売却でお悩みではありませんか？<br>
+          玄風では、査定から売却、必要に応じて解体工事まで一貫して対応いたします。
+        </p>
+
+        <h2>こんな方におすすめです</h2>
+        <ul class="check-list">
+          <li>相続した実家や土地を売却したい</li>
+          <li>空き家の管理に困っている</li>
+          <li>固定資産税の負担を減らしたい</li>
+          <li>遠方の不動産を処分したい</li>
+          <li>仲介と買取のどちらが良いかわからない</li>
+        </ul>
+
+        <h2>玄風の売却サポート</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <h3>無料査定・価格相談</h3>
+            <p>地域の相場を熟知したスタッフが、適正な価格をご提示します。</p>
+          </div>
+          <div class="feature-card">
+            <h3>仲介 or 買取の最適提案</h3>
+            <p>物件の状態やご希望に応じて、最適な売却方法をアドバイスします。</p>
+          </div>
+          <div class="feature-card">
+            <h3>解体工事の手配</h3>
+            <p>自社で解体工事業も営んでいるため、スムーズかつ適正価格で対応可能です。</p>
+          </div>
+          <div class="feature-card">
+            <h3>3,000万円特別控除の活用</h3>
+            <p>相続した空き家の売却で使える税制優遇の適用をサポートします。</p>
+          </div>
+        </div>
+
+        <h2>ご相談の流れ</h2>
+        <div class="flow-list">
+          <div class="flow-item"><span class="flow-num">01</span><div><h4>お問い合わせ</h4><p>お電話・LINE・フォームからお気軽にご連絡ください。</p></div></div>
+          <div class="flow-item"><span class="flow-num">02</span><div><h4>無料相談・ヒアリング</h4><p>状況をお伺いし、最適な売却プランをご提案します。</p></div></div>
+          <div class="flow-item"><span class="flow-num">03</span><div><h4>物件調査・査定</h4><p>現地調査を行い、適正な査定価格をお出しします。</p></div></div>
+          <div class="flow-item"><span class="flow-num">04</span><div><h4>売却活動・契約</h4><p>ご納得いただいた上で売却活動を開始し、契約まで進めます。</p></div></div>
+        </div>
+      </div>
+
+      <div class="page-cta fade-in">
+        <h3>まずはお気軽にご相談ください</h3>
+        <p>売却の可否や価格の目安だけでも構いません。無料でご相談いただけます。</p>
+        <div class="cta-btns">
+          <a href="/contact/" class="btn btn-primary btn-lg">無料相談はこちら</a>
+          <a href="#LINE_URL" class="btn btn-line btn-lg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.82 2 10.5c0 4.21 3.74 7.74 8.79 8.4.34.07.81.23.93.52.1.27.07.68.03.95l-.15.91c-.05.28-.22 1.1.96.6s6.37-3.75 8.69-6.42C23.08 13.4 22 11.17 22 10.5 22 5.82 17.52 2 12 2z"/></svg>
+            LINEで相談する
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, #1a3a2a 0%, #2e8b57 100%);
+    color: #fff;
+    padding: 80px 0 48px;
+    text-align: center;
+  }
+  .page-hero-title {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+  }
+  .page-hero-desc {
+    font-size: 0.9rem;
+    opacity: 0.6;
+    letter-spacing: 2px;
+  }
+  .page-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .lead-text {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    margin-bottom: 40px;
+  }
+  .page-content h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    margin: 40px 0 20px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--color-primary-bg);
+  }
+  .check-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .check-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+  }
+  .check-list li::before {
+    content: "✓";
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+  .features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .feature-card {
+    background: var(--color-bg-light);
+    padding: 24px;
+    border-radius: 12px;
+    border-left: 3px solid var(--color-primary);
+  }
+  .feature-card h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: var(--color-primary-dark);
+  }
+  .feature-card p {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    line-height: 1.7;
+  }
+  .flow-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .flow-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 20px;
+    background: var(--color-bg-light);
+    border-radius: 12px;
+  }
+  .flow-num {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    flex-shrink: 0;
+  }
+  .flow-item h4 {
+    font-size: 1rem;
+    margin-bottom: 4px;
+    color: var(--color-primary-dark);
+  }
+  .flow-item p {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+  }
+  .page-cta {
+    max-width: 800px;
+    margin: 48px auto 0;
+    padding: 40px;
+    background: var(--color-primary-bg);
+    border-radius: 16px;
+    text-align: center;
+  }
+  .page-cta h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    color: var(--color-primary-dark);
+  }
+  .page-cta p {
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+    margin-bottom: 24px;
+  }
+  .cta-btns {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn-lg {
+    padding: 16px 40px;
+    font-size: 1.05rem;
+  }
+  @media (max-width: 768px) {
+    .features-grid { grid-template-columns: 1fr; }
+  }
+</style>

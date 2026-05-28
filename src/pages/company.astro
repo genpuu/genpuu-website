@@ -1,0 +1,217 @@
+---
+import Base from "../layouts/Base.astro";
+
+const info = [
+  { label: "会社名", value: "株式会社玄風" },
+  { label: "代表者", value: "古塘 祐二朗" },
+  { label: "創業", value: "2024年10月" },
+  { label: "所在地", value: "福岡県" },
+  { label: "事業内容", value: "不動産売買・仲介・管理 / 解体工事業 / 外構工事業 / 古物商 / 相続コンサルティング" },
+  { label: "対応エリア", value: "福岡県内（広く見て九州圏内）" },
+  { label: "ホームページ", value: "https://genpuu.com/" },
+];
+---
+
+<Base title="会社概要" description="株式会社玄風の会社概要。福岡県で相続コンサルティング・不動産売買・解体工事を展開しています。">
+
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-hero-title">会社概要</h1>
+      <p class="page-hero-desc">Company</p>
+    </div>
+  </section>
+
+  <!-- Mission -->
+  <section class="section">
+    <div class="container">
+      <div class="mission fade-in">
+        <p class="mission-label">ミッション</p>
+        <h2 class="mission-text">不動産・相続に関するお悩みを解決に導きます。</h2>
+        <p class="mission-desc">
+          お客様本位・スピーディな対応を心がけ、<br>
+          不動産・相続のお悩みを解決に導きます。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Company Info Table -->
+  <section class="section" style="background: var(--color-bg-light);">
+    <div class="container">
+      <h2 class="section-title fade-in">基本情報</h2>
+      <table class="info-table fade-in">
+        <tbody>
+          {info.map((row) => (
+            <tr>
+              <th>{row.label}</th>
+              <td>{row.value}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Representative -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title fade-in">代表挨拶</h2>
+      <div class="representative fade-in">
+        <div class="rep-content">
+          <h3 class="rep-name">代表取締役　古塘 祐二朗</h3>
+          <p class="rep-text">
+            証券会社で約6年間、開業医や会社オーナーといった富裕層向けの営業を担当した後、
+            電気工事会社の取締役として約5年間の経営経験を積みました。
+          </p>
+          <p class="rep-text">
+            その中で「不動産に関するお悩みを抱えながらも、どこに相談すればいいかわからない」
+            という方々を多く見てきました。特に相続が絡む不動産の問題は、法律・税金・不動産の
+            知識が複合的に必要となり、お客様おひとりで対処するのは非常に困難です。
+          </p>
+          <p class="rep-text">
+            株式会社玄風は、顧問弁護士との連携による法的サポートと、
+            不動産の実務経験を活かした一括サポートで、
+            お客様の「困った」を「解決した」に変えるお手伝いをいたします。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Strengths -->
+  <section class="section" style="background: var(--color-bg-light);">
+    <div class="container">
+      <h2 class="section-title fade-in">玄風の強み</h2>
+      <div class="strengths-grid">
+        <div class="strength fade-in">
+          <h3>顧問弁護士との連携</h3>
+          <p>
+            経験豊富な顧問弁護士と連携。
+            弊社経由で無料相談時間の拡大等の恩恵もあり、相続・法律絡みの案件に強力なサポートが可能です。
+          </p>
+        </div>
+        <div class="strength fade-in">
+          <h3>ハウスメーカーとの連携</h3>
+          <p>
+            信頼できるハウスメーカーの担当者をご紹介可能。
+            土地をお探しのお客様への土地仲介から住宅購入まで、一貫したサポートを提供しています。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, #1a3a2a 0%, #2e8b57 100%);
+    color: #fff;
+    padding: 80px 0 48px;
+    text-align: center;
+  }
+  .page-hero-title {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+  }
+  .page-hero-desc {
+    font-size: 0.9rem;
+    opacity: 0.6;
+    letter-spacing: 2px;
+  }
+
+  .mission {
+    text-align: center;
+    padding: 40px 0;
+  }
+  .mission-label {
+    font-size: 0.8rem;
+    color: var(--color-primary);
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+  .mission-text {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--color-primary-dark);
+    margin-bottom: 16px;
+  }
+  .mission-desc {
+    color: var(--color-text-light);
+    line-height: 1.8;
+  }
+
+  .info-table {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-collapse: collapse;
+  }
+  .info-table th,
+  .info-table td {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--color-border);
+    text-align: left;
+    font-size: 0.95rem;
+  }
+  .info-table th {
+    width: 160px;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .info-table td {
+    border: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .representative {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .rep-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--color-primary-dark);
+  }
+  .rep-text {
+    font-size: 0.95rem;
+    line-height: 1.9;
+    margin-bottom: 16px;
+    color: var(--color-text);
+  }
+
+  .strengths-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .strength {
+    background: #fff;
+    padding: 32px;
+    border-radius: 12px;
+    border-left: 4px solid var(--color-primary);
+  }
+  .strength h3 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    color: var(--color-primary-dark);
+  }
+  .strength p {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    line-height: 1.8;
+  }
+
+  @media (max-width: 768px) {
+    .info-table th { width: 120px; }
+    .strengths-grid { grid-template-columns: 1fr; }
+  }
+</style>

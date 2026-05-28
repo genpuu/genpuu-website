@@ -1,0 +1,208 @@
+---
+import Base from "../layouts/Base.astro";
+---
+
+<Base title="ご自宅の購入をお考えの方" description="土地探しから住宅購入まで。お客様のご希望に合った物件探しをサポートします。">
+
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-hero-title">ご自宅の購入をお考えの方</h1>
+      <p class="page-hero-desc">Buy</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="page-content fade-in">
+        <p class="lead-text">
+          マイホームの購入を検討されている方へ。<br>
+          玄風では土地探しから住宅購入まで、地域密着の情報網を活かした一貫サポートを行っています。
+        </p>
+
+        <h2>こんな方におすすめです</h2>
+        <ul class="check-list">
+          <li>京築・筑豊・北九州エリアで土地を探している</li>
+          <li>信頼できるハウスメーカーを紹介してほしい</li>
+          <li>土地探しと家づくりを一緒に進めたい</li>
+          <li>住宅ローンの相談もしたい</li>
+          <li>中古住宅の購入を検討している</li>
+        </ul>
+
+        <h2>玄風の購入サポート</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <h3>土地探しサポート</h3>
+            <p>ご希望のエリア・条件に合った土地を、地域密着の情報網で見つけます。</p>
+          </div>
+          <div class="feature-card">
+            <h3>ハウスメーカーのご紹介</h3>
+            <p>信頼できるハウスメーカーの担当者をご紹介。土地購入から住宅建築まで安心のサポート体制です。</p>
+          </div>
+          <div class="feature-card">
+            <h3>住宅ローンのご相談</h3>
+            <p>住宅ローン減税など、お得な制度の活用方法もアドバイスいたします。</p>
+          </div>
+          <div class="feature-card">
+            <h3>中古住宅・リフォーム</h3>
+            <p>中古住宅の売買仲介やリフォームの相談にも対応しています。</p>
+          </div>
+        </div>
+
+        <h2>ご相談の流れ</h2>
+        <div class="flow-list">
+          <div class="flow-item"><span class="flow-num">01</span><div><h4>お問い合わせ</h4><p>お電話・LINE・フォームからお気軽にご連絡ください。</p></div></div>
+          <div class="flow-item"><span class="flow-num">02</span><div><h4>ヒアリング</h4><p>ご希望のエリア・予算・条件をお伺いします。</p></div></div>
+          <div class="flow-item"><span class="flow-num">03</span><div><h4>物件のご紹介</h4><p>条件に合った土地・物件を候補としてご紹介します。</p></div></div>
+          <div class="flow-item"><span class="flow-num">04</span><div><h4>内見・契約</h4><p>気に入った物件の内見から契約までサポートします。</p></div></div>
+        </div>
+      </div>
+
+      <div class="page-cta fade-in">
+        <h3>まずはお気軽にご相談ください</h3>
+        <p>土地の情報収集だけでも構いません。無料でご相談いただけます。</p>
+        <div class="cta-btns">
+          <a href="/contact/" class="btn btn-primary btn-lg">無料相談はこちら</a>
+          <a href="#LINE_URL" class="btn btn-line btn-lg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.82 2 10.5c0 4.21 3.74 7.74 8.79 8.4.34.07.81.23.93.52.1.27.07.68.03.95l-.15.91c-.05.28-.22 1.1.96.6s6.37-3.75 8.69-6.42C23.08 13.4 22 11.17 22 10.5 22 5.82 17.52 2 12 2z"/></svg>
+            LINEで相談する
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, #1a3a2a 0%, #2e8b57 100%);
+    color: #fff;
+    padding: 80px 0 48px;
+    text-align: center;
+  }
+  .page-hero-title {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+  }
+  .page-hero-desc {
+    font-size: 0.9rem;
+    opacity: 0.6;
+    letter-spacing: 2px;
+  }
+  .page-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .lead-text {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    margin-bottom: 40px;
+  }
+  .page-content h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    margin: 40px 0 20px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--color-primary-bg);
+  }
+  .check-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .check-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+  }
+  .check-list li::before {
+    content: "✓";
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+  .features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .feature-card {
+    background: var(--color-bg-light);
+    padding: 24px;
+    border-radius: 12px;
+    border-left: 3px solid var(--color-primary);
+  }
+  .feature-card h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: var(--color-primary-dark);
+  }
+  .feature-card p {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    line-height: 1.7;
+  }
+  .flow-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .flow-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 20px;
+    background: var(--color-bg-light);
+    border-radius: 12px;
+  }
+  .flow-num {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    flex-shrink: 0;
+  }
+  .flow-item h4 {
+    font-size: 1rem;
+    margin-bottom: 4px;
+    color: var(--color-primary-dark);
+  }
+  .flow-item p {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+  }
+  .page-cta {
+    max-width: 800px;
+    margin: 48px auto 0;
+    padding: 40px;
+    background: var(--color-primary-bg);
+    border-radius: 16px;
+    text-align: center;
+  }
+  .page-cta h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    color: var(--color-primary-dark);
+  }
+  .page-cta p {
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+    margin-bottom: 24px;
+  }
+  .cta-btns {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn-lg {
+    padding: 16px 40px;
+    font-size: 1.05rem;
+  }
+  @media (max-width: 768px) {
+    .features-grid { grid-template-columns: 1fr; }
+  }
+</style>

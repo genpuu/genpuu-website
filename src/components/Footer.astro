@@ -1,0 +1,129 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="logo-main">玄風</span>
+          <span class="logo-sub">GENPUU</span>
+        </div>
+        <p class="footer-desc">
+          不動産・相続のお悩みを<br>
+          解決に導きます。
+        </p>
+      </div>
+
+      <div class="footer-nav">
+        <h4>サービス</h4>
+        <ul>
+          <li><a href="/service/#souzoku">相続コンサルティング</a></li>
+          <li><a href="/service/#akiya">空き家売却サポート</a></li>
+          <li><a href="/service/#fudousan">不動産売買・仲介</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-nav">
+        <h4>会社情報</h4>
+        <ul>
+          <li><a href="/company/">会社概要</a></li>
+          <li><a href="/blog/">コラム</a></li>
+          <li><a href="/contact/">お問い合わせ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>お気軽にご相談ください</h4>
+        <a href="/contact/" class="btn btn-primary" style="width: 100%; margin-bottom: 12px;">
+          無料相談はこちら
+        </a>
+        <a href="#LINE_URL" class="btn btn-line" style="width: 100%;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.82 2 10.5c0 4.21 3.74 7.74 8.79 8.4.34.07.81.23.93.52.1.27.07.68.03.95l-.15.91c-.05.28-.22 1.1.96.6s6.37-3.75 8.69-6.42C23.08 13.4 22 11.17 22 10.5 22 5.82 17.52 2 12 2zm-3.97 12.03L6.5 11.2v2.83H5.37V8.97h1.13l1.53 2.83V8.97h1.13v5.06H8.03zm2.44 0h-1.13V8.97h1.13v5.06zm4.32 0h-3.1V8.97h1.13v3.93h1.97v1.13zm3.38 0h-1.13l-1.96-2.83v2.83h-1.13V8.97h1.13l1.96 2.83V8.97h1.13v5.06z"/></svg>
+          LINEで相談する
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {currentYear} 株式会社玄風 All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--color-bg-dark);
+    color: var(--color-text-white);
+    padding: 60px 0 24px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  .footer-logo {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .footer-logo .logo-main {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--color-text-white);
+  }
+  .footer-logo .logo-sub {
+    font-size: 0.6rem;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,0.5);
+  }
+  .footer-tagline {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    color: rgba(255,255,255,0.8);
+  }
+  .footer-desc {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.7;
+  }
+  .footer-nav h4,
+  .footer-contact h4 {
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+    color: var(--color-text-white);
+  }
+  .footer-nav ul li {
+    margin-bottom: 10px;
+  }
+  .footer-nav ul li a {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .footer-nav ul li a:hover {
+    color: var(--color-text-white);
+  }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+    text-align: center;
+  }
+  .footer-bottom p {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.4);
+  }
+
+  @media (max-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  }
+</style>

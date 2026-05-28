@@ -1,0 +1,637 @@
+---
+import Base from "../layouts/Base.astro";
+import { getCollection } from "astro:content";
+
+const allPosts = await getCollection("blog");
+const recentPosts = allPosts
+  .sort((a, b) => (b.data.order ?? 0) - (a.data.order ?? 0))
+  .slice(0, 6);
+
+const categoryMap: Record<string, string> = {
+  "相続": "相続",
+  "空き家活用": "空き家",
+  "不動産": "不動産",
+};
+---
+
+<Base title="不動産・相続のお悩みを解決に導きます">
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content container">
+      <h1 class="hero-title fade-in">
+        不動産・相続に関するお悩みを<br class="pc-only">
+        <span class="hero-accent">解決</span>に導きます。
+      </h1>
+      <div class="hero-nav fade-in">
+        <a href="/sell/" class="hero-nav-btn">
+          <span class="hero-nav-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z"/><path d="M9 21V12h6v9"/></svg></span>
+          <span>保有不動産の売却相談はこちら</span>
+          <span class="hero-nav-arrow">→</span>
+        </a>
+        <a href="/buy/" class="hero-nav-btn">
+          <span class="hero-nav-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.78 7.78 5.5 5.5 0 0 1 7.78-7.78zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg></span>
+          <span>ご自宅の購入をお考えの方はこちら</span>
+          <span class="hero-nav-arrow">→</span>
+        </a>
+        <a href="/souzoku/" class="hero-nav-btn">
+          <span class="hero-nav-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></span>
+          <span>相続のご相談はこちら</span>
+          <span class="hero-nav-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROBLEMS ===== -->
+  <section class="section problems-section">
+    <div class="container">
+      <h2 class="section-title fade-in">こんなお悩みありませんか？</h2>
+      <p class="section-subtitle fade-in">Problems</p>
+      <div class="problems-grid">
+        <div class="problem-card fade-in">
+          <span class="problem-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z"/><line x1="9" y1="14" x2="15" y2="14" opacity="0.4"/><line x1="9" y1="17" x2="15" y2="17" opacity="0.4"/></svg></span>
+          <p>相続した実家が<br>空き家のまま…</p>
+        </div>
+        <div class="problem-card fade-in">
+          <span class="problem-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></span>
+          <p>このまま保有している不動産を<br>次世代に引き継いで良いのか</p>
+        </div>
+        <div class="problem-card fade-in">
+          <span class="problem-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+          <p>固定資産税が<br>急に高くなった</p>
+        </div>
+        <div class="problem-card fade-in">
+          <span class="problem-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>
+          <p>保有している不動産が<br>負動産になるかも</p>
+        </div>
+        <div class="problem-card fade-in">
+          <span class="problem-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 6V2"/><path d="M6 18v4"/><path d="M18 18v4"/><line x1="7" y1="10" x2="7" y2="14"/><line x1="12" y1="10" x2="12" y2="14"/><line x1="17" y1="10" x2="17" y2="14"/></svg></span>
+          <p>解体すべきか<br>売却すべきか迷う</p>
+        </div>
+        <div class="problem-card fade-in">
+          <span class="problem-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+          <p>不動産のまま相続になると<br>揉めるんじゃないか</p>
+        </div>
+      </div>
+      <div class="problems-answer fade-in">
+        <p class="problems-answer-lead">そのお悩み、<strong>玄風が解決に導きます。</strong></p>
+        <p class="problems-answer-desc">
+          相続コンサルティングから不動産の査定・売却・再生・解体まで、<br class="pc-only">
+          複数の業者に依頼する手間なく一括でサポートします。
+        </p>
+        <div class="problems-answer-btns">
+          <a href="/contact/" class="btn btn-primary">無料相談はこちら</a>
+          <a href="#LINE_URL" class="btn btn-line">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.82 2 10.5c0 4.21 3.74 7.74 8.79 8.4.34.07.81.23.93.52.1.27.07.68.03.95l-.15.91c-.05.28-.22 1.1.96.6s6.37-3.75 8.69-6.42C23.08 13.4 22 11.17 22 10.5 22 5.82 17.52 2 12 2z"/></svg>
+            LINEで相談する
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICE ===== -->
+  <section class="section service-section">
+    <div class="container">
+      <h2 class="section-title fade-in">サービス</h2>
+      <p class="section-subtitle fade-in">Service</p>
+      <div class="service-grid">
+        <a href="/sell/" class="service-card fade-in">
+          <span class="service-num">01</span>
+          <h3 class="service-name">空き家サポート</h3>
+          <p class="service-desc">相続した空き家の管理・活用・売却・解体まで一貫して対応。放置リスクを解消し、最適な方法をご提案します。</p>
+          <ul class="service-tags">
+            <li>空き家管理</li>
+            <li>再生・活用</li>
+            <li>解体工事</li>
+            <li>固定資産税対策</li>
+          </ul>
+          <span class="service-link">詳しく見る →</span>
+        </a>
+        <a href="/sell/" class="service-card fade-in">
+          <span class="service-num">02</span>
+          <h3 class="service-name">不動産売却サポート</h3>
+          <p class="service-desc">土地・建物の査定から売却まで対応。仲介・買取の最適な方法をアドバイスし、納得のいく売却を実現します。</p>
+          <ul class="service-tags">
+            <li>無料査定</li>
+            <li>仲介・買取</li>
+            <li>3,000万円控除</li>
+            <li>相続不動産</li>
+          </ul>
+          <span class="service-link">詳しく見る →</span>
+        </a>
+        <a href="/buy/" class="service-card fade-in">
+          <span class="service-num">03</span>
+          <h3 class="service-name">不動産購入サポート</h3>
+          <p class="service-desc">京築・筑豊・北九州エリアの土地探しから住宅購入まで。お客様のご希望に合った物件をご提案します。</p>
+          <ul class="service-tags">
+            <li>土地探し</li>
+            <li>住宅ローン</li>
+            <li>中古住宅</li>
+            <li>新築用地</li>
+          </ul>
+          <span class="service-link">詳しく見る →</span>
+        </a>
+        <a href="/souzoku/" class="service-card fade-in">
+          <span class="service-num">04</span>
+          <h3 class="service-name">相続コンサルティング</h3>
+          <p class="service-desc">相続手続きの全体サポート、遺産分割のアドバイス、相続税の節税対策まで。経験豊富な顧問弁護士と連携した専門的なサポートが可能です。</p>
+          <ul class="service-tags">
+            <li>相続手続き</li>
+            <li>遺産分割</li>
+            <li>節税対策</li>
+            <li>弁護士連携</li>
+          </ul>
+          <span class="service-link">詳しく見る →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STRENGTH ===== -->
+  <section class="section strength-section">
+    <div class="container">
+      <h2 class="section-title fade-in">玄風が選ばれる理由</h2>
+      <p class="section-subtitle fade-in">Strength</p>
+      <div class="strength-grid">
+        <div class="strength-card fade-in">
+          <div class="strength-num-wrap"><span class="strength-num">01</span></div>
+          <h3>京築・筑豊・北九州に根ざした地域密着</h3>
+          <p>地域の不動産市場を熟知。地域の特性を活かした最適な売却プラン・活用方法をご提案します。</p>
+        </div>
+        <div class="strength-card fade-in">
+          <div class="strength-num-wrap"><span class="strength-num">02</span></div>
+          <h3>お客様本位の丁寧な対応</h3>
+          <p>むやみな営業は一切いたしません。お客様の状況をじっくりお伺いし、最善の選択肢をご提案します。</p>
+        </div>
+        <div class="strength-card fade-in">
+          <div class="strength-num-wrap"><span class="strength-num">03</span></div>
+          <h3>相続から売却まで一括対応</h3>
+          <p>相続コンサルティング、不動産査定、売却仲介、解体工事まで。複数の業者に依頼する手間なく、一括でサポートします。</p>
+        </div>
+        <div class="strength-card fade-in">
+          <div class="strength-num-wrap"><span class="strength-num">04</span></div>
+          <h3>経験豊富な顧問弁護士との連携</h3>
+          <p>弊社を通じてご相談いただくことで、顧問弁護士への無料相談が可能。相続トラブルや法律問題にも専門的なサポートを受けられます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLOW: ご相談の流れは非表示（データは sell.astro / buy.astro / souzoku.astro の各ページに残存） -->
+
+  <!-- ===== CTA (Mid) ===== -->
+  <section class="section cta-mid-section">
+    <div class="container cta-mid-inner">
+      <h2 class="fade-in">ご相談は<strong>無料</strong>です</h2>
+      <p class="fade-in">「まだ相続が発生していないけれど…」「売るかどうかまだ決めていない…」<br class="pc-only">そんな段階でも大丈夫。お気軽にお問い合わせください。</p>
+      <div class="cta-mid-btns fade-in">
+        <a href="/contact/" class="btn btn-primary btn-lg">無料相談はこちら</a>
+        <a href="#LINE_URL" class="btn btn-line btn-lg">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.82 2 10.5c0 4.21 3.74 7.74 8.79 8.4.34.07.81.23.93.52.1.27.07.68.03.95l-.15.91c-.05.28-.22 1.1.96.6s6.37-3.75 8.69-6.42C23.08 13.4 22 11.17 22 10.5 22 5.82 17.52 2 12 2z"/></svg>
+          LINEで相談する
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GREETING: 代表挨拶は非表示（データは company.astro に残存） -->
+
+  <!-- ===== COLUMN ===== -->
+  <section class="section column-section">
+    <div class="container">
+      <h2 class="section-title fade-in">コラム</h2>
+      <p class="section-subtitle fade-in">Column</p>
+      <div class="column-grid">
+        {recentPosts.map((post) => (
+          <a href={`/blog/${post.id}/`} class="column-card fade-in">
+            <div class="column-card-body">
+              <span class="column-category">{categoryMap[post.data.category] ?? post.data.category}</span>
+              <h3 class="column-title">{post.data.title}</h3>
+            </div>
+            <span class="column-arrow">→</span>
+          </a>
+        ))}
+      </div>
+      <div class="column-more fade-in">
+        <a href="/blog/" class="btn btn-outline">コラム一覧を見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COMPANY ===== -->
+  <section class="section company-section">
+    <div class="container">
+      <h2 class="section-title fade-in">会社概要</h2>
+      <p class="section-subtitle fade-in">Company</p>
+      <table class="company-table fade-in">
+        <tbody>
+          <tr><th>会社名</th><td>株式会社玄風</td></tr>
+          <tr><th>代表者</th><td>古塘 祐二朗</td></tr>
+          <tr><th>創業</th><td>2024年10月</td></tr>
+          <tr><th>事業内容</th><td>不動産売買・仲介・管理 / 解体工事業 / 外構工事業 / 相続コンサルティング</td></tr>
+          <tr><th>対応エリア</th><td>京築・筑豊・北九州（福岡県内）</td></tr>
+        </tbody>
+      </table>
+      <div class="company-more fade-in">
+        <a href="/company/" class="btn btn-outline">会社概要を見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA (Bottom) ===== -->
+  <section class="section cta-bottom-section">
+    <div class="container cta-bottom-inner">
+      <h2 class="fade-in">まずは無料相談から始めませんか？</h2>
+      <p class="fade-in">
+        相続・空き家・不動産のことで少しでも不安がある方は、<br class="pc-only">
+        お気軽にご連絡ください。
+      </p>
+      <div class="cta-bottom-btns fade-in">
+        <a href="/contact/" class="btn btn-primary btn-lg">無料相談はこちら</a>
+        <a href="#LINE_URL" class="btn btn-line btn-lg">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.82 2 10.5c0 4.21 3.74 7.74 8.79 8.4.34.07.81.23.93.52.1.27.07.68.03.95l-.15.91c-.05.28-.22 1.1.96.6s6.37-3.75 8.69-6.42C23.08 13.4 22 11.17 22 10.5 22 5.82 17.52 2 12 2z"/></svg>
+          LINEで相談する
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  /* ===== Hero ===== */
+  .hero {
+    position: relative;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    background: url("/images/top.png") center/cover no-repeat;
+    overflow: hidden;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    padding: 120px 20px 80px;
+  }
+  .hero-title {
+    font-family: var(--font-heading);
+    font-size: 2.4rem;
+    line-height: 1.5;
+    margin-bottom: 40px;
+    font-weight: 700;
+  }
+  .hero-accent {
+    color: var(--color-accent);
+    position: relative;
+  }
+  .hero-accent::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--color-accent);
+  }
+  .hero-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 520px;
+  }
+  .hero-nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 24px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 12px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 600;
+    transition: all 0.3s;
+  }
+  .hero-nav-btn:hover {
+    background: rgba(255, 255, 255, 0.22);
+    transform: translateX(6px);
+    color: #fff;
+  }
+  .hero-nav-icon { flex-shrink: 0; display: flex; align-items: center; opacity: 0.9; }
+  .hero-nav-arrow { margin-left: auto; font-size: 1.2rem; opacity: 0.6; transition: opacity 0.3s; }
+  .hero-nav-btn:hover .hero-nav-arrow { opacity: 1; }
+
+  /* ===== Problems ===== */
+  .problems-section { background: var(--color-primary-bg); }
+  .problems-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  .problem-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 28px 20px;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.3s;
+  }
+  .problem-card:hover { transform: translateY(-4px); }
+  .problem-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 16px;
+    background: var(--color-primary-bg);
+    border-radius: 50%;
+  }
+  .problem-card p { font-size: 0.95rem; color: var(--color-text); line-height: 1.6; }
+
+  .problems-answer {
+    background: #fff;
+    border-radius: 16px;
+    padding: 40px;
+    text-align: center;
+    border: 2px solid var(--color-primary);
+  }
+  .problems-answer-lead {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    color: var(--color-primary-dark);
+  }
+  .problems-answer-desc {
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+    line-height: 1.8;
+    margin-bottom: 24px;
+  }
+  .problems-answer-btns {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* ===== Service ===== */
+  .service-section { background: var(--color-bg-light); }
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .service-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px 28px;
+    text-decoration: none;
+    color: var(--color-text);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: all 0.3s;
+    border: 1px solid transparent;
+  }
+  .service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    border-color: var(--color-primary);
+  }
+  .service-num {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+  .service-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    margin-bottom: 12px;
+  }
+  .service-desc {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin-bottom: 20px;
+    flex: 1;
+  }
+  .service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 20px;
+  }
+  .service-tags li {
+    background: var(--color-primary-bg);
+    color: var(--color-primary-dark);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+  .service-link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-top: auto;
+  }
+
+  /* ===== Strength ===== */
+  .strength-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .strength-card {
+    background: var(--color-bg-light);
+    border-radius: 16px;
+    padding: 32px;
+    border-top: 4px solid var(--color-primary);
+  }
+  .strength-num-wrap { margin-bottom: 16px; }
+  .strength-num {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+  .strength-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--color-primary-dark);
+  }
+  .strength-card p {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    line-height: 1.8;
+  }
+
+  /* ===== CTA Mid ===== */
+  .cta-mid-section {
+    background: linear-gradient(135deg, #1a3a2a 0%, #2e8b57 100%);
+    color: #fff;
+  }
+  .cta-mid-inner { text-align: center; }
+  .cta-mid-inner h2 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+  }
+  .cta-mid-inner h2 strong { color: var(--color-accent); }
+  .cta-mid-inner p {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-bottom: 32px;
+    line-height: 1.8;
+  }
+  .cta-mid-btns {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* ===== Column ===== */
+  .column-section { background: var(--color-bg-light); }
+  .column-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  .column-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 24px;
+    background: #fff;
+    border-radius: 12px;
+    text-decoration: none;
+    border: 1px solid var(--color-border);
+    transition: all 0.3s;
+  }
+  .column-card:hover {
+    border-color: var(--color-primary);
+    transform: translateX(4px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .column-card-body { flex: 1; }
+  .column-category {
+    display: inline-block;
+    background: var(--color-primary-bg);
+    color: var(--color-primary-dark);
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .column-title {
+    font-size: 0.95rem;
+    color: var(--color-text);
+    line-height: 1.5;
+    font-weight: 500;
+  }
+  .column-arrow {
+    color: var(--color-primary);
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+  }
+  .column-card:hover .column-arrow { opacity: 1; }
+  .column-more { text-align: center; }
+
+  /* ===== Company ===== */
+  .company-table {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto 32px;
+    border-collapse: collapse;
+  }
+  .company-table th,
+  .company-table td {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--color-border);
+    text-align: left;
+    font-size: 0.95rem;
+  }
+  .company-table th {
+    width: 140px;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+  }
+  .company-more { text-align: center; }
+
+  /* ===== CTA Bottom ===== */
+  .cta-bottom-section {
+    background: linear-gradient(135deg, #1a3a2a 0%, #2e8b57 100%);
+    color: #fff;
+  }
+  .cta-bottom-inner { text-align: center; }
+  .cta-bottom-inner h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin-bottom: 16px;
+  }
+  .cta-bottom-inner p {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-bottom: 32px;
+    line-height: 1.8;
+  }
+  .cta-bottom-btns {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* ===== Common ===== */
+  .btn-lg { padding: 16px 40px; font-size: 1.05rem; }
+  .sp-only { display: none; }
+  .pc-only { display: inline; }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 768px) {
+    .sp-only { display: inline; }
+    .pc-only { display: none; }
+
+    .hero-title { font-size: 1.5rem; }
+    .hero-content { padding: 80px 20px 60px; }
+    .hero-nav-btn { font-size: 0.9rem; padding: 14px 18px; }
+
+    .problems-grid { grid-template-columns: repeat(2, 1fr); }
+    .problems-answer { padding: 28px 20px; }
+    .problems-answer-lead { font-size: 1.2rem; }
+
+    .service-grid { grid-template-columns: 1fr 1fr; }
+
+    .strength-grid { grid-template-columns: 1fr; }
+
+    .cta-mid-inner h2 { font-size: 1.4rem; }
+    .cta-bottom-inner h2 { font-size: 1.4rem; }
+
+    .btn-lg { padding: 14px 28px; font-size: 0.95rem; }
+
+    .company-table th { width: 100px; }
+  }
+</style>

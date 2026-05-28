@@ -1,0 +1,174 @@
+---
+const navItems = [
+  { label: "ホーム", href: "/" },
+  { label: "サービス", href: "/service/" },
+  { label: "コラム", href: "/blog/" },
+  { label: "会社概要", href: "/company/" },
+  { label: "お問い合わせ", href: "/contact/" },
+];
+---
+
+<header class="header">
+  <div class="header-inner container">
+    <a href="/" class="logo">
+      <span class="logo-main">玄風</span>
+      <span class="logo-sub">GENPUU</span>
+    </a>
+
+    <nav class="nav-desktop">
+      {navItems.map((item) => (
+        <a href={item.href} class="nav-link">{item.label}</a>
+      ))}
+      <a href="/contact/" class="btn btn-primary btn-sm">無料相談</a>
+    </nav>
+
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <nav class="nav-mobile" id="nav-mobile">
+    {navItems.map((item) => (
+      <a href={item.href} class="nav-mobile-link">{item.label}</a>
+    ))}
+    <a href="/contact/" class="btn btn-primary" style="margin-top: 16px; width: 100%;">無料相談</a>
+  </nav>
+</header>
+
+<style>
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+  .logo {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    text-decoration: none;
+  }
+  .logo-main {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+  }
+  .logo-sub {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    color: var(--color-text-light);
+    text-transform: uppercase;
+  }
+
+  /* Desktop nav */
+  .nav-desktop {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+  .nav-link {
+    color: var(--color-text);
+    font-size: 0.9rem;
+    font-weight: 500;
+    position: relative;
+    text-decoration: none;
+  }
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-primary);
+    transition: width 0.3s;
+  }
+  .nav-link:hover {
+    color: var(--color-primary);
+  }
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  .btn-sm {
+    padding: 8px 20px;
+    font-size: 0.85rem;
+  }
+
+  /* Hamburger */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--color-text);
+    transition: all 0.3s;
+  }
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  /* Mobile nav */
+  .nav-mobile {
+    display: none;
+    flex-direction: column;
+    padding: 20px;
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .nav-mobile.open {
+    display: flex;
+  }
+  .nav-mobile-link {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text);
+    font-size: 1rem;
+    text-decoration: none;
+  }
+
+  @media (max-width: 768px) {
+    .nav-desktop {
+      display: none;
+    }
+    .hamburger {
+      display: flex;
+    }
+  }
+</style>
+
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const navMobile = document.getElementById("nav-mobile");
+  hamburger?.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMobile?.classList.toggle("open");
+  });
+</script>

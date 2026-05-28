@@ -1,0 +1,214 @@
+---
+import Base from "../layouts/Base.astro";
+---
+
+<Base title="お問い合わせ" description="株式会社玄風へのお問い合わせ。相続・空き家・不動産に関するご相談を無料で承ります。">
+
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-hero-title">お問い合わせ</h1>
+      <p class="page-hero-desc">Contact</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- Contact methods -->
+        <div class="contact-methods fade-in">
+          <h2 class="contact-heading">お気軽にご相談ください</h2>
+          <p class="contact-intro">
+            相続・空き家・不動産に関するご相談を無料で承ります。<br>
+            お電話・LINE・フォームよりお問い合わせください。
+          </p>
+
+          <div class="method-cards">
+            <div class="method-card">
+              <div class="method-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="var(--color-primary)"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              </div>
+              <h3>お電話でのご相談</h3>
+              <p class="method-detail">お電話での無料相談を承っております。</p>
+              <p class="method-note">受付時間: 9:00〜18:00（土日祝休み）</p>
+            </div>
+
+            <div class="method-card method-line">
+              <div class="method-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="var(--color-line)"><path d="M12 2C6.48 2 2 5.82 2 10.5c0 4.21 3.74 7.74 8.79 8.4.34.07.81.23.93.52.1.27.07.68.03.95l-.15.91c-.05.28-.22 1.1.96.6s6.37-3.75 8.69-6.42C23.08 13.4 22 11.17 22 10.5 22 5.82 17.52 2 12 2z"/></svg>
+              </div>
+              <h3>LINEでのご相談</h3>
+              <p class="method-detail">LINEで気軽にご相談いただけます。</p>
+              <a href="#LINE_URL" class="btn btn-line" style="width: 100%; margin-top: 12px;">
+                友だち追加して相談する
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact form -->
+        <div class="contact-form-wrapper fade-in">
+          <h2 class="contact-heading">フォームからのお問い合わせ</h2>
+          <form class="contact-form" id="contact-form">
+            <div class="form-group">
+              <label for="name">お名前 <span class="required">必須</span></label>
+              <input type="text" id="name" name="name" required placeholder="例：山田 太郎">
+            </div>
+            <div class="form-group">
+              <label for="email">メールアドレス <span class="required">必須</span></label>
+              <input type="email" id="email" name="email" required placeholder="例：example@email.com">
+            </div>
+            <div class="form-group">
+              <label for="phone">電話番号</label>
+              <input type="tel" id="phone" name="phone" placeholder="例：090-1234-5678">
+            </div>
+            <div class="form-group">
+              <label for="category">ご相談内容</label>
+              <select id="category" name="category">
+                <option value="">選択してください</option>
+                <option value="相続">相続について</option>
+                <option value="空き家">空き家の売却・管理</option>
+                <option value="不動産売買">不動産の売買</option>
+                <option value="解体">解体工事</option>
+                <option value="その他">その他</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">ご相談内容の詳細 <span class="required">必須</span></label>
+              <textarea id="message" name="message" rows="6" required placeholder="お気軽にご記入ください"></textarea>
+            </div>
+            <div class="form-privacy">
+              <label>
+                <input type="checkbox" required>
+                <a href="#">プライバシーポリシー</a>に同意する
+              </label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+              送信する
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, #1a3a2a 0%, #2e8b57 100%);
+    color: #fff;
+    padding: 80px 0 48px;
+    text-align: center;
+  }
+  .page-hero-title {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+  }
+  .page-hero-desc {
+    font-size: 0.9rem;
+    opacity: 0.6;
+    letter-spacing: 2px;
+  }
+
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .contact-heading {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    margin-bottom: 16px;
+  }
+  .contact-intro {
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+    line-height: 1.8;
+    margin-bottom: 28px;
+  }
+
+  .method-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .method-card {
+    padding: 28px;
+    background: var(--color-bg-light);
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+  }
+  .method-icon {
+    margin-bottom: 12px;
+  }
+  .method-card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+    color: var(--color-text);
+  }
+  .method-detail {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    margin-bottom: 4px;
+  }
+  .method-note {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+  }
+
+  /* Form */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .form-group label {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  .required {
+    color: #e74c3c;
+    font-size: 0.75rem;
+    margin-left: 4px;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 12px 16px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: var(--font-body);
+    transition: border-color 0.3s;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.1);
+  }
+  .form-privacy {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+  }
+  .form-privacy input {
+    margin-right: 6px;
+  }
+
+  @media (max-width: 768px) {
+    .contact-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
