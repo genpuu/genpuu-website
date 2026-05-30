@@ -1,5 +1,7 @@
 ---
 import Base from "../layouts/Base.astro";
+
+const formAction = "https://docs.google.com/forms/d/e/1FAIpQLScNqbsVWt-PuWz5xaImWb3r91jkf2fveeG-BGaItZpnJr7DzQ/formResponse";
 ---
 
 <Base title="お問い合わせ" description="株式会社玄風へのお問い合わせ。相続・空き家・不動産に関するご相談を無料で承ります。">
@@ -47,17 +49,56 @@ import Base from "../layouts/Base.astro";
 
       <div class="form-section fade-in">
         <h2 class="contact-heading">フォームからのお問い合わせ</h2>
-        <div class="gform-wrapper">
-          <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLScNqbsVWt-PuWz5xaImWb3r91jkf2fveeG-BGaItZpnJr7DzQ/viewform?embedded=true"
-            width="100%"
-            height="900"
-            frameborder="0"
-            marginheight="0"
-            marginwidth="0"
-            loading="lazy"
-          >読み込んでいます…</iframe>
+
+        <!-- 送信前フォーム -->
+        <form
+          id="contact-form"
+          action={formAction}
+          method="POST"
+          target="hidden-iframe"
+          class="contact-form"
+        >
+          <div class="form-group">
+            <label for="name">お名前 <span class="required">必須</span></label>
+            <input type="text" id="name" name="entry.1743182690" required placeholder="例：山田 太郎">
+          </div>
+          <div class="form-group">
+            <label for="email">メールアドレス <span class="required">必須</span></label>
+            <input type="email" id="email" name="entry.49810583" required placeholder="例：example@email.com">
+          </div>
+          <div class="form-group">
+            <label for="phone">電話番号 <span class="required">必須</span></label>
+            <input type="tel" id="phone" name="entry.664589103" required placeholder="例：090-1234-5678">
+          </div>
+          <div class="form-group">
+            <label for="category">ご相談内容 <span class="required">必須</span></label>
+            <select id="category" name="entry.685381743" required>
+              <option value="">選択してください</option>
+              <option value="保有物件のご売却">保有物件のご売却</option>
+              <option value="物件のご購入">物件のご購入</option>
+              <option value="相続">相続</option>
+              <option value="解体工事">解体工事</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">ご相談内容の詳細 <span class="required">必須</span></label>
+            <textarea id="message" name="entry.40921669" rows="6" required placeholder="お気軽にご記入ください"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg submit-btn">
+            送信する
+          </button>
+        </form>
+
+        <!-- 送信完了メッセージ -->
+        <div id="form-thanks" class="form-thanks" style="display: none;">
+          <div class="thanks-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h3>お問い合わせありがとうございます</h3>
+          <p>内容を確認のうえ、担当者よりご連絡いたします。<br>しばらくお待ちください。</p>
         </div>
+
+        <iframe name="hidden-iframe" id="hidden-iframe" style="display:none;"></iframe>
       </div>
 
     </div>
@@ -140,23 +181,82 @@ import Base from "../layouts/Base.astro";
     color: var(--color-text-light);
   }
 
+  /* Form */
   .form-section {
-    max-width: 700px;
+    max-width: 640px;
     margin: 0 auto;
   }
   .form-section .contact-heading {
     text-align: center;
-    margin-bottom: 24px;
+    margin-bottom: 28px;
   }
-  .gform-wrapper {
-    background: var(--color-bg-light);
-    border-radius: 16px;
-    padding: 8px;
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+  .required {
+    color: #e74c3c;
+    font-size: 0.75rem;
+    margin-left: 4px;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 14px 16px;
     border: 1px solid var(--color-border);
-    overflow: hidden;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-family: var(--font-body);
+    background: var(--color-bg-light);
+    transition: all 0.3s;
   }
-  .gform-wrapper iframe {
-    border-radius: 12px;
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.1);
+    background: #fff;
+  }
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: #bbb;
+  }
+  .submit-btn {
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  /* Thanks */
+  .form-thanks {
+    text-align: center;
+    padding: 48px 20px;
+    background: var(--color-primary-bg);
+    border-radius: 16px;
+  }
+  .thanks-icon {
+    margin-bottom: 20px;
+  }
+  .form-thanks h3 {
+    font-size: 1.3rem;
+    color: var(--color-primary-dark);
+    margin-bottom: 12px;
+  }
+  .form-thanks p {
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+    line-height: 1.8;
   }
 
   @media (max-width: 768px) {
@@ -165,3 +265,15 @@ import Base from "../layouts/Base.astro";
     }
   }
 </style>
+
+<script>
+  const form = document.getElementById("contact-form") as HTMLFormElement;
+  const thanks = document.getElementById("form-thanks") as HTMLElement;
+
+  form?.addEventListener("submit", () => {
+    setTimeout(() => {
+      form.style.display = "none";
+      thanks.style.display = "block";
+    }, 500);
+  });
+</script>
