@@ -1,0 +1,134 @@
+---
+import Base from "../layouts/Base.astro";
+---
+
+<Base title="プライバシーポリシー" description="株式会社玄風のプライバシーポリシー。個人情報の取り扱いについてご説明します。">
+
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-hero-title">プライバシーポリシー</h1>
+      <p class="page-hero-desc">Privacy Policy</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="policy-content">
+
+        <p class="policy-intro">
+          株式会社玄風（以下「当社」）は、お客様の個人情報の保護に関し、以下のとおりプライバシーポリシーを定め、適切な管理・保護に努めます。
+        </p>
+
+        <h2>1. 個人情報の収集について</h2>
+        <p>当社は、お問い合わせフォーム等を通じて、お名前、メールアドレス、電話番号、ご相談内容等の個人情報を収集することがあります。個人情報の収集は、適法かつ公正な手段により行います。</p>
+
+        <h2>2. 個人情報の利用目的</h2>
+        <p>収集した個人情報は、以下の目的で利用いたします。</p>
+        <ul>
+          <li>お問い合わせへの回答・対応</li>
+          <li>不動産売買・仲介・相続コンサルティング等のサービス提供</li>
+          <li>当社サービスに関するご案内・情報提供</li>
+          <li>サービスの改善・新サービスの開発</li>
+        </ul>
+
+        <h2>3. 個人情報の第三者提供</h2>
+        <p>当社は、以下の場合を除き、お客様の個人情報を第三者に提供いたしません。</p>
+        <ul>
+          <li>お客様の同意がある場合</li>
+          <li>法令に基づく場合</li>
+          <li>人の生命・身体・財産の保護のために必要な場合</li>
+          <li>サービス提供に必要な範囲で業務委託先に提供する場合（この場合、適切な監督を行います）</li>
+        </ul>
+
+        <h2>4. 個人情報の安全管理</h2>
+        <p>当社は、個人情報の漏洩、滅失、毀損等を防止するために、適切な安全管理措置を講じます。</p>
+
+        <h2>5. 個人情報の開示・訂正・削除</h2>
+        <p>お客様ご本人から個人情報の開示・訂正・削除等のご請求があった場合は、ご本人確認の上、速やかに対応いたします。</p>
+
+        <h2>6. Cookie（クッキー）の使用について</h2>
+        <p>当社ウェブサイトでは、サービスの利便性向上やアクセス解析のためにCookieを使用する場合があります。お客様はブラウザの設定によりCookieの受け取りを拒否することができます。</p>
+
+        <h2>7. プライバシーポリシーの変更</h2>
+        <p>当社は、必要に応じて本ポリシーを変更することがあります。変更後のプライバシーポリシーは、当ウェブサイトに掲載した時点から効力を生じるものとします。</p>
+
+        <h2>8. お問い合わせ窓口</h2>
+        <p>個人情報の取り扱いに関するお問い合わせは、以下までご連絡ください。</p>
+        <div class="contact-info">
+          <p>株式会社玄風</p>
+          <p>電話: <a href="tel:050-8884-9984">050-8884-9984</a></p>
+          <p>メール: info@genpuu.com</p>
+        </div>
+
+        <p class="policy-date">制定日: 2026年5月30日</p>
+
+      </div>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, #1a3a2a 0%, #2e8b57 100%);
+    color: #fff;
+    padding: 80px 0 48px;
+    text-align: center;
+  }
+  .page-hero-title {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+  }
+  .page-hero-desc {
+    font-size: 0.9rem;
+    opacity: 0.6;
+    letter-spacing: 2px;
+  }
+  .policy-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .policy-intro {
+    font-size: 0.95rem;
+    line-height: 1.9;
+    margin-bottom: 32px;
+  }
+  .policy-content h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    margin: 32px 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--color-primary-bg);
+  }
+  .policy-content p {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    margin-bottom: 12px;
+  }
+  .policy-content ul {
+    list-style: disc;
+    padding-left: 24px;
+    margin-bottom: 16px;
+  }
+  .policy-content ul li {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    margin-bottom: 4px;
+  }
+  .contact-info {
+    background: var(--color-bg-light);
+    padding: 20px;
+    border-radius: 12px;
+    margin: 12px 0;
+  }
+  .contact-info p {
+    margin-bottom: 4px;
+  }
+  .policy-date {
+    margin-top: 32px;
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+  }
+</style>
