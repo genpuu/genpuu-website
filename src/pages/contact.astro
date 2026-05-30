@@ -55,7 +55,7 @@ const formAction = "https://docs.google.com/forms/d/e/1FAIpQLScNqbsVWt-PuWz5xaIm
           id="contact-form"
           action={formAction}
           method="POST"
-          target="hidden-iframe"
+          target="_blank"
           class="contact-form"
         >
           <div class="form-group">
@@ -90,16 +90,7 @@ const formAction = "https://docs.google.com/forms/d/e/1FAIpQLScNqbsVWt-PuWz5xaIm
           </button>
         </form>
 
-        <!-- 送信完了メッセージ -->
-        <div id="form-thanks" class="form-thanks" style="display: none;">
-          <div class="thanks-icon">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          </div>
-          <h3>お問い合わせありがとうございます</h3>
-          <p>内容を確認のうえ、担当者よりご連絡いたします。<br>しばらくお待ちください。</p>
-        </div>
-
-        <iframe name="hidden-iframe" id="hidden-iframe" style="display:none;"></iframe>
+        <p class="form-note">※ 送信後、Googleフォームの完了画面が表示されます。</p>
       </div>
 
     </div>
@@ -239,25 +230,11 @@ const formAction = "https://docs.google.com/forms/d/e/1FAIpQLScNqbsVWt-PuWz5xaIm
     margin-top: 8px;
   }
 
-  /* Thanks */
-  .form-thanks {
+  .form-note {
     text-align: center;
-    padding: 48px 20px;
-    background: var(--color-primary-bg);
-    border-radius: 16px;
-  }
-  .thanks-icon {
-    margin-bottom: 20px;
-  }
-  .form-thanks h3 {
-    font-size: 1.3rem;
-    color: var(--color-primary-dark);
-    margin-bottom: 12px;
-  }
-  .form-thanks p {
-    font-size: 0.95rem;
+    font-size: 0.8rem;
     color: var(--color-text-light);
-    line-height: 1.8;
+    margin-top: 12px;
   }
 
   @media (max-width: 768px) {
@@ -267,14 +244,3 @@ const formAction = "https://docs.google.com/forms/d/e/1FAIpQLScNqbsVWt-PuWz5xaIm
   }
 </style>
 
-<script>
-  const form = document.getElementById("contact-form") as HTMLFormElement;
-  const thanks = document.getElementById("form-thanks") as HTMLElement;
-
-  form?.addEventListener("submit", () => {
-    setTimeout(() => {
-      form.style.display = "none";
-      thanks.style.display = "block";
-    }, 500);
-  });
-</script>
