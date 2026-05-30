@@ -11,15 +11,11 @@ function doPost(e) {
     data.message
   ]);
 
-  var subject = "[HP問い合わせ] " + data.category + " - " + data.name;
-  var body = "HPから新しいお問い合わせがありました。\n\n";
-  body += "お名前: " + data.name + "\n";
-  body += "メール: " + data.email + "\n";
-  body += "電話番号: " + data.phone + "\n";
-  body += "ご相談内容: " + data.category + "\n\n";
-  body += "詳細:\n" + data.message;
-
-  GmailApp.sendEmail("info@genpuu.com", subject, body);
+  try {
+    MailApp.sendEmail("info@genpuu.com", "[HP問い合わせ] " + data.category + " - " + data.name, "HPから新しいお問い合わせがありました。\n\nお名前: " + data.name + "\nメール: " + data.email + "\n電話番号: " + data.phone + "\nご相談内容: " + data.category + "\n\n詳細:\n" + data.message);
+  } catch(err) {
+    sheet.appendRow(["メール送信エラー", err.toString()]);
+  }
 
   return ContentService
     .createTextOutput(JSON.stringify({result: "success"}))
