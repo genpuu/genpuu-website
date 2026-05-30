@@ -75,6 +75,9 @@ const categoryMap: Record<string, string> = {
           <p>不動産のまま相続になると<br>揉めるんじゃないか</p>
         </div>
       </div>
+      <div class="problems-image fade-in">
+        <img src="/images/elderly-couple.png" alt="相続・不動産のお悩みを抱えるご夫婦" />
+      </div>
       <div class="problems-answer fade-in">
         <p class="problems-answer-lead">そのお悩み、<strong>玄風が解決に導きます。</strong></p>
         <p class="problems-answer-desc">
@@ -360,6 +363,18 @@ const categoryMap: Record<string, string> = {
     border-radius: 50%;
   }
   .problem-card p { font-size: 0.95rem; color: var(--color-text); line-height: 1.6; }
+
+  .problems-image {
+    margin-bottom: 32px;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .problems-image img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 16px;
+  }
 
   .problems-answer {
     background: #fff;
