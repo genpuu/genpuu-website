@@ -11,13 +11,25 @@ import Base from "../layouts/Base.astro";
     </div>
   </section>
 
+  <section class="section about-block">
+    <div class="container">
+      <div class="about-content fade-in">
+        <div class="about-text">
+          <p class="lead-text">
+            空き家・土地・相続した不動産の売却でお悩みではありませんか？<br>
+            玄風では、査定から売却、必要に応じて解体工事まで一貫して対応いたします。
+          </p>
+        </div>
+        <div class="about-image">
+          <img src="/images/consul.png" alt="不動産売却相談のイメージ" />
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section">
     <div class="container">
       <div class="page-content fade-in">
-        <p class="lead-text">
-          空き家・土地・相続した不動産の売却でお悩みではありませんか？<br>
-          玄風では、査定から売却、必要に応じて解体工事まで一貫して対応いたします。
-        </p>
 
         <h2>こんな方におすすめです</h2>
         <ul class="check-list">
@@ -86,6 +98,17 @@ import Base from "../layouts/Base.astro";
     opacity: 0.6;
     letter-spacing: 2px;
   }
+  .about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .about-text .lead-text {
+    margin-bottom: 0;
+  }
+  .about-image { border-radius: 16px; overflow: hidden; }
+  .about-image img { width: 100%; height: 100%; object-fit: cover; border-radius: 16px; }
   .page-content {
     max-width: 800px;
     margin: 0 auto;
@@ -204,6 +227,7 @@ import Base from "../layouts/Base.astro";
     font-size: 1.05rem;
   }
   @media (max-width: 768px) {
+    .about-content { grid-template-columns: 1fr; }
     .features-grid { grid-template-columns: 1fr; }
   }
 </style>
