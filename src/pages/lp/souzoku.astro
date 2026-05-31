@@ -138,11 +138,12 @@ import "../../styles/global.css";
           <div class="manga-panel">
             <div class="manga-img-wrap">
               <img src="/images/1-7-10.png" alt="玄風スタッフが資料を広げて丁寧に説明している" />
+              <div class="manga-scene-title">不動産分野は玄風が対応</div>
               <div class="manga-balloon manga-balloon-green manga-pos-bottom-right-up">
                 <p>佐藤さん、ご安心ください。<br>まず現地を調査して、<strong>売却・再生・解体</strong>の<br>選択肢を整理してご提案します。</p>
               </div>
               <div class="manga-balloon manga-balloon-normal manga-pos-bottom-left">
-                <p>相続登記のことも<br>よくわからなくて…</p>
+                <p>空き家があるんだけど<br>どうしたらいいでしょう…</p>
               </div>
             </div>
           </div>
@@ -151,8 +152,9 @@ import "../../styles/global.css";
           <div class="manga-panel">
             <div class="manga-img-wrap">
               <img src="/images/1-8-10.png" alt="顧問弁護士が書類を見せながら説明、玄風スタッフも同席" />
+              <div class="manga-scene-title">法律分野は顧問弁護士をご紹介</div>
               <div class="manga-balloon manga-balloon-green manga-pos-top-center">
-                <p>相続登記の期限は2027年3月末です。<br>今のうちに<strong>一緒に整理しましょう。</strong></p>
+                <p>佐藤さん、法律分野のご相談については<br><strong>お任せください。</strong></p>
               </div>
               <div class="manga-label-tag">顧問弁護士</div>
             </div>
@@ -872,6 +874,22 @@ import "../../styles/global.css";
     margin: 0;
     line-height: 1.4;
     backdrop-filter: blur(2px);
+  }
+
+  /* シーンタイトル（コマ7・8用） */
+  .manga-scene-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--color-primary-dark);
+    color: #fff;
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 8px 12px;
+    letter-spacing: 1px;
+    z-index: 1;
   }
 
   /* 弁護士ラベル（コマ8用） */
