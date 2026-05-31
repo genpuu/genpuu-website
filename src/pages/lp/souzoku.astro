@@ -1,0 +1,1419 @@
+---
+/**
+ * 相続 × 空き家 広告用ランディングページ
+ * ナビゲーションなし・CTA特化の独立LP
+ * 非弁行為に配慮：玄風は不動産会社として対応、法律面は顧問弁護士を紹介する構成
+ */
+import "../../styles/global.css";
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="北九州・京築・筑豊エリアの相続した空き家、放置していませんか？売却・再生・解体まで対応。顧問弁護士への無料相談もご紹介。株式会社玄風" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>北九州・京築・筑豊の相続不動産相談｜株式会社玄風</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="lp-body">
+
+    <!-- ===== 固定CTA バー ===== -->
+    <div class="lp-sticky-cta">
+      <div class="lp-sticky-inner">
+        <a href="tel:050-8884-9984" class="lp-sticky-btn lp-sticky-tel">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          電話で相談
+        </a>
+        <a href="#lp-form" class="lp-sticky-btn lp-sticky-form">無料相談を申し込む</a>
+      </div>
+    </div>
+
+    <!-- ===== Hero ===== -->
+    <section class="lp-hero">
+      <div class="lp-container">
+        <p class="lp-hero-label">北九州・京築・筑豊エリアの相続 × 不動産</p>
+        <h1 class="lp-hero-title">
+          相続した不動産<br class="sp-only">そのままで<br>大丈夫ですか？
+        </h1>
+        <p class="lp-hero-sub">
+          空き家の放置は<strong>固定資産税の増額</strong>や<strong>近隣トラブル</strong>の原因に。<br>
+          北九州・京築・筑豊エリアの不動産のプロが、売却・再生・解体まで一括対応します。
+        </p>
+        <div class="lp-hero-points">
+          <span class="lp-hero-point">相談無料</span>
+          <span class="lp-hero-point">顧問弁護士紹介</span>
+          <span class="lp-hero-point">北九州・京築・筑豊対応</span>
+        </div>
+        <div class="lp-hero-cta">
+          <a href="#lp-form" class="lp-btn lp-btn-accent">まずは無料で相談する</a>
+          <a href="tel:050-8884-9984" class="lp-btn lp-btn-white">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            050-8884-9984
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 漫画セクション ===== -->
+    <section class="lp-section lp-manga">
+      <div class="lp-container">
+        <h2 class="lp-heading">漫画でわかる「相続×空き家」問題</h2>
+        <div class="manga-panels">
+
+          <!-- コマ1: 相続発生 -->
+          <div class="manga-panel">
+            <div class="manga-img-wrap">
+              <img src="/images/1-1-10.png" alt="窓の外を見つめ、物思いにふける佐藤さん" />
+              <div class="manga-caption">
+                <p>母が亡くなり、実家を相続することになった佐藤さん（58歳）。<br>佐藤さんは北九州市に住んでおり、実家は京築の田舎町にある。</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- コマ2: 空き家の現実 -->
+          <div class="manga-panel">
+            <div class="manga-img-wrap">
+              <img src="/images/1-2-10.png" alt="荒れ果てた実家を前に立ち尽くす佐藤さん" />
+              <div class="manga-balloon manga-balloon-think manga-pos-top-right">
+                <p>築45年…<br>もう誰も住んでないし<br>庭も荒れ放題…</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- コマ3: 固定資産税にショック -->
+          <div class="manga-panel">
+            <div class="manga-img-wrap">
+              <img src="/images/1-3-10.png" alt="税金の通知書を見て驚く佐藤さん" />
+              <div class="manga-balloon manga-balloon-shout manga-pos-top-right">
+                <p>固定資産税の通知！？<br>年間<span class="manga-red">12万円</span>も<br>払い続けるの！？</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- コマ4: 息子との会話 -->
+          <div class="manga-panel">
+            <div class="manga-img-wrap">
+              <img src="/images/1-4-10.png" alt="リビングで向かい合って話す佐藤さんと息子" />
+              <div class="manga-balloon manga-balloon-normal manga-pos-top-right">
+                <p>お母さん、おばあちゃんの家<br>どうするの？正直、僕たちも<br>引き継ぎたくないんだけど…</p>
+              </div>
+              <div class="manga-balloon manga-balloon-normal manga-pos-bottom-left">
+                <p>そうよね…あなたたちに<br><span class="manga-red">「負動産」</span>を<br>残すわけにはいかないわ</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- コマ5: 途方に暮れる -->
+          <div class="manga-panel">
+            <div class="manga-img-wrap">
+              <img src="/images/1-5-10.png" alt="頭を抱えて悩む佐藤さん" />
+              <div class="manga-thought-cloud">
+                <p>売りたいけど、こんな古い家売れるの？</p>
+                <p>解体するにもお金がかかるし…</p>
+                <p>相続登記も義務化されたって聞いたけど…</p>
+                <p>誰に相談すればいいの？</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- コマ6: スマホで玄風を発見 -->
+          <div class="manga-panel">
+            <div class="manga-img-wrap">
+              <img src="/images/1-6-10.png" alt="スマホで検索し、表情が明るくなる佐藤さん" />
+              <div class="manga-balloon manga-balloon-discover manga-pos-top-right">
+                <p>「北九州・京築エリアの<br>相続不動産相談」…<br><strong>売却も解体も対応</strong>で<br><strong>弁護士にも相談</strong>できるの！？</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- コマ7: 玄風スタッフとの相談 -->
+          <div class="manga-panel">
+            <div class="manga-img-wrap">
+              <img src="/images/1-7-10.png" alt="玄風スタッフが資料を広げて丁寧に説明している" />
+              <div class="manga-balloon manga-balloon-green manga-pos-bottom-right-up">
+                <p>佐藤さん、ご安心ください。<br>まず現地を調査して、<strong>売却・再生・解体</strong>の<br>選択肢を整理してご提案します。</p>
+              </div>
+              <div class="manga-balloon manga-balloon-normal manga-pos-bottom-left">
+                <p>相続登記のことも<br>よくわからなくて…</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- コマ8: 顧問弁護士との相談 -->
+          <div class="manga-panel">
+            <div class="manga-img-wrap">
+              <img src="/images/1-8-10.png" alt="顧問弁護士が書類を見せながら説明、玄風スタッフも同席" />
+              <div class="manga-balloon manga-balloon-green manga-pos-top-center">
+                <p>相続登記の期限は2027年3月末です。<br>今のうちに<strong>一緒に整理しましょう。</strong></p>
+              </div>
+              <div class="manga-label-tag">顧問弁護士</div>
+            </div>
+          </div>
+
+          <!-- コマ9: 解決して笑顔 -->
+          <div class="manga-panel">
+            <div class="manga-img-wrap">
+              <img src="/images/1-9-10.png" alt="笑顔の佐藤さんと玄風スタッフ" />
+              <div class="manga-balloon manga-balloon-happy manga-pos-top-left">
+                <p>不動産のことも法律のことも<br><strong>まとめて相談できて<br>本当に助かった！</strong></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- コマ10: 結末まとめ -->
+          <div class="manga-panel manga-panel-last">
+            <div class="manga-img-wrap">
+              <img src="/images/1-10-10.png" alt="売却完了した家、登記のハンコ、笑顔の佐藤さんと息子" />
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 結果チェックリスト（漫画の外） -->
+        <div class="manga-result-outside">
+          <div class="manga-result-item">
+            <span class="manga-result-check-icon"></span>
+            <span>空き家を売却 — 玄風が一括対応</span>
+          </div>
+          <div class="manga-result-item">
+            <span class="manga-result-check-icon"></span>
+            <span>相続登記も完了 — 顧問弁護士がサポート</span>
+          </div>
+          <div class="manga-result-item">
+            <span class="manga-result-check-icon"></span>
+            <span>子どもへの負担ゼロ — 「負動産」を残さず解決</span>
+          </div>
+        </div>
+
+        <div class="manga-cta">
+          <p>佐藤さんと同じお悩みをお持ちの方へ</p>
+          <a href="#lp-form" class="lp-btn lp-btn-accent">まずは無料で相談する</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== こんなお悩みありませんか？ ===== -->
+    <section class="lp-section lp-problems">
+      <div class="lp-container">
+        <h2 class="lp-heading">こんなお悩みありませんか？</h2>
+        <div class="lp-problem-grid">
+          <div class="lp-problem-card">
+            <div class="lp-problem-icon">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <p>親から<strong>空き家を相続</strong>したが<br>どうすればいいかわからない</p>
+          </div>
+          <div class="lp-problem-card">
+            <div class="lp-problem-icon">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <p>空き家を放置しているが<br><strong>固定資産税や管理費</strong>が負担</p>
+          </div>
+          <div class="lp-problem-card">
+            <div class="lp-problem-icon">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <p><strong>子どもに迷惑をかけたくない</strong><br>元気なうちに整理したい</p>
+          </div>
+          <div class="lp-problem-card">
+            <div class="lp-problem-icon">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            </div>
+            <p>相続登記が<strong>義務化</strong>されたが<br>手続きがわからない</p>
+          </div>
+          <div class="lp-problem-card">
+            <div class="lp-problem-icon">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            </div>
+            <p>売れるのか、解体すべきか<br><strong>判断がつかない</strong></p>
+          </div>
+          <div class="lp-problem-card">
+            <div class="lp-problem-icon">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <p>相続トラブルを<br><strong>法律の専門家に相談</strong>したい</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 放置リスク ===== -->
+    <section class="lp-section lp-risk">
+      <div class="lp-container">
+        <h2 class="lp-heading lp-heading-alert">空き家の放置、こんなリスクがあります</h2>
+        <div class="lp-risk-list">
+          <div class="lp-risk-item">
+            <span class="lp-risk-num">1</span>
+            <div>
+              <h3>固定資産税が最大6倍に</h3>
+              <p>2023年の法改正で、管理不全の空き家は「特定空家」に指定され、住宅用地の特例が解除される可能性があります。</p>
+            </div>
+          </div>
+          <div class="lp-risk-item">
+            <span class="lp-risk-num">2</span>
+            <div>
+              <h3>相続登記の義務化（2024年4月〜）</h3>
+              <p>相続を知った日から3年以内に登記しないと、10万円以下の過料が科される場合があります。経過措置は2027年3月末まで。</p>
+            </div>
+          </div>
+          <div class="lp-risk-item">
+            <span class="lp-risk-num">3</span>
+            <div>
+              <h3>次世代への「負動産」の連鎖</h3>
+              <p>放置した不動産は、お子様・お孫様にそのまま引き継がれます。管理コスト・解体費用・トラブルリスクも一緒に相続されます。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 玄風にできること ===== -->
+    <section class="lp-section lp-solution">
+      <div class="lp-container">
+        <h2 class="lp-heading">玄風なら、まとめて解決できます</h2>
+        <p class="lp-heading-sub">不動産のプロと法律の専門家が連携して、最適な出口を見つけます。</p>
+
+        <div class="lp-solution-grid">
+          <div class="lp-solution-card">
+            <div class="lp-solution-num">01</div>
+            <h3>空き家の売却</h3>
+            <p>仲介・買取の両方に対応。「こんな古い家、売れるの？」という物件でもまずはご相談ください。市場価値を査定し、最適な売却方法をご提案します。</p>
+          </div>
+          <div class="lp-solution-card">
+            <div class="lp-solution-num">02</div>
+            <h3>空き家の再生・活用</h3>
+            <p>リノベーションして賃貸に出す、更地にして土地活用するなど、売却以外の選択肢もご提案。収支シミュレーションをもとに判断いただけます。</p>
+          </div>
+          <div class="lp-solution-card">
+            <div class="lp-solution-num">03</div>
+            <h3>建物の解体</h3>
+            <p>玄風では解体工事も請け負っております。解体から整地、売却まで一貫して対応できます。</p>
+          </div>
+          <div class="lp-solution-card lp-solution-card-accent">
+            <div class="lp-solution-num">04</div>
+            <h3>顧問弁護士への無料相談</h3>
+            <p>相続に伴う法律上の問題（遺産分割・相続登記・遺言書など）は、弊社顧問弁護士をご紹介します。<strong>相談料は無料</strong>。法律の専門家が、お客様の状況に応じた解決策をご提示します。</p>
+            <p class="lp-solution-note">※法律相談・法的手続きは弁護士が直接対応します。玄風は不動産に関する業務を担当します。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 中間CTA ===== -->
+    <section class="lp-section lp-mid-cta">
+      <div class="lp-container">
+        <p class="lp-mid-cta-text">「うちの場合はどうなる？」<br class="sp-only">その疑問だけでも構いません。</p>
+        <div class="lp-hero-cta">
+          <a href="#lp-form" class="lp-btn lp-btn-accent">無料相談を申し込む</a>
+          <a href="tel:050-8884-9984" class="lp-btn lp-btn-white">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            050-8884-9984
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 選ばれる理由 ===== -->
+    <section class="lp-section lp-reason">
+      <div class="lp-container">
+        <h2 class="lp-heading">玄風が選ばれる3つの理由</h2>
+        <div class="lp-reason-grid">
+          <div class="lp-reason-card">
+            <div class="lp-reason-num">01</div>
+            <h3>不動産 × 法律のワンストップ対応</h3>
+            <p>不動産の査定・売却・解体は玄風が担当。法律面は顧問弁護士をご紹介。お客様が複数の窓口を回る必要はありません。</p>
+          </div>
+          <div class="lp-reason-card">
+            <div class="lp-reason-num">02</div>
+            <h3>顧問弁護士は相続の実務経験が豊富</h3>
+            <p>弊社顧問弁護士は、国立大学の顧問弁護士も務める実績ある弁護士です。相続案件の実務経験に基づいた、的確なアドバイスを受けられます。</p>
+          </div>
+          <div class="lp-reason-card">
+            <div class="lp-reason-num">03</div>
+            <h3>北九州・京築・筑豊エリア密着</h3>
+            <p>苅田町に拠点を構え、北九州・行橋・豊前・田川など地域の不動産事情を熟知。現地調査もスピーディーに対応します。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ご相談の流れ ===== -->
+    <section class="lp-section lp-flow">
+      <div class="lp-container">
+        <h2 class="lp-heading">ご相談の流れ</h2>
+        <div class="lp-flow-list">
+          <div class="lp-flow-item">
+            <div class="lp-flow-step">STEP 1</div>
+            <h3>お問い合わせ</h3>
+            <p>お電話・フォームからお気軽にご連絡ください。現在の状況を簡単にお聞きします。</p>
+          </div>
+          <div class="lp-flow-arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="lp-flow-item">
+            <div class="lp-flow-step">STEP 2</div>
+            <h3>無料相談・現地調査</h3>
+            <p>ヒアリングの内容をもとに、現地を確認。不動産の状態・立地・市場価値を調査します。</p>
+          </div>
+          <div class="lp-flow-arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="lp-flow-item">
+            <div class="lp-flow-step">STEP 3</div>
+            <h3>プランのご提案</h3>
+            <p>売却・活用・解体の選択肢を整理してご提案。法律面の課題がある場合は顧問弁護士をご紹介します。</p>
+          </div>
+          <div class="lp-flow-arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="lp-flow-item">
+            <div class="lp-flow-step">STEP 4</div>
+            <h3>実行・完了</h3>
+            <p>ご納得いただけたら実行に移します。売却・解体・登記手続きまで、完了するまでサポートします。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== よくある質問 ===== -->
+    <section class="lp-section lp-faq">
+      <div class="lp-container">
+        <h2 class="lp-heading">よくあるご質問</h2>
+        <div class="lp-faq-list">
+          <details class="lp-faq-item">
+            <summary>相談料はかかりますか？</summary>
+            <p>いいえ、相談料は無料です。お気軽にお問い合わせください。顧問弁護士への初回相談も無料でご紹介しています。</p>
+          </details>
+          <details class="lp-faq-item">
+            <summary>かなり古い空き家でも対応できますか？</summary>
+            <p>はい、築年数に関わらず対応可能です。建物の状態に応じて、売却・再生・解体の中から最適な方法をご提案します。</p>
+          </details>
+          <details class="lp-faq-item">
+            <summary>遠方に住んでいて現地に行けないのですが…</summary>
+            <p>現地調査は当社が代行しますので、遠方にお住まいの方でも問題ありません。お電話やオンラインでのやり取りも可能です。</p>
+          </details>
+          <details class="lp-faq-item">
+            <summary>相続の法律問題も相談できますか？</summary>
+            <p>はい。法律上の問題（遺産分割・相続登記・遺言書など）については、弊社顧問弁護士をご紹介し、弁護士が直接対応いたします。</p>
+          </details>
+          <details class="lp-faq-item">
+            <summary>まだ相続は発生していないのですが…</summary>
+            <p>生前の対策こそ重要です。「子どもに負担をかけたくない」という方の事前相談も多くいただいています。お気軽にご相談ください。</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== フォーム ===== -->
+    <section class="lp-section lp-form-section" id="lp-form">
+      <div class="lp-container">
+        <h2 class="lp-heading">無料相談のお申し込み</h2>
+        <p class="lp-heading-sub">以下のフォームにご記入ください。担当者より折り返しご連絡いたします。</p>
+
+        <form id="lp-contact-form" class="lp-form">
+          <div class="lp-form-group">
+            <label for="lp-name">お名前 <span class="lp-required">必須</span></label>
+            <input type="text" id="lp-name" name="name" required placeholder="例：山田 太郎">
+          </div>
+          <div class="lp-form-row">
+            <div class="lp-form-group">
+              <label for="lp-phone">電話番号 <span class="lp-required">必須</span></label>
+              <input type="tel" id="lp-phone" name="phone" required placeholder="例：090-1234-5678">
+            </div>
+            <div class="lp-form-group">
+              <label for="lp-email">メールアドレス</label>
+              <input type="email" id="lp-email" name="email" placeholder="例：example@email.com">
+            </div>
+          </div>
+          <div class="lp-form-group">
+            <label for="lp-area">物件の所在エリア</label>
+            <select id="lp-area" name="area">
+              <option value="">選択してください</option>
+              <option value="北九州市">北九州市</option>
+              <option value="行橋市">行橋市</option>
+              <option value="豊前市">豊前市</option>
+              <option value="苅田町">苅田町</option>
+              <option value="みやこ町">みやこ町</option>
+              <option value="築上町・上毛町・吉富町">築上町・上毛町・吉富町</option>
+              <option value="田川市・田川郡">田川市・田川郡</option>
+              <option value="直方市・宮若市・鞍手郡">直方市・宮若市・鞍手郡</option>
+              <option value="飯塚市・嘉麻市・嘉穂郡">飯塚市・嘉麻市・嘉穂郡</option>
+              <option value="その他">その他</option>
+            </select>
+          </div>
+          <div class="lp-form-group">
+            <label>お悩みの内容（複数選択可）</label>
+            <div class="lp-checkbox-group">
+              <label><input type="checkbox" name="concern" value="空き家の売却"> 空き家の売却</label>
+              <label><input type="checkbox" name="concern" value="空き家の活用・再生"> 空き家の活用・再生</label>
+              <label><input type="checkbox" name="concern" value="建物の解体"> 建物の解体</label>
+              <label><input type="checkbox" name="concern" value="相続登記"> 相続登記</label>
+              <label><input type="checkbox" name="concern" value="遺産分割"> 遺産分割</label>
+              <label><input type="checkbox" name="concern" value="生前対策"> 生前対策</label>
+              <label><input type="checkbox" name="concern" value="その他"> その他</label>
+            </div>
+          </div>
+          <div class="lp-form-group">
+            <label for="lp-message">ご相談内容（任意）</label>
+            <textarea id="lp-message" name="message" rows="4" placeholder="物件の所在地や状況など、わかる範囲でご記入ください"></textarea>
+          </div>
+          <div class="lp-form-privacy">
+            <label>
+              <input type="checkbox" id="lp-privacy-check" required>
+              <a href="/privacy/" target="_blank">プライバシーポリシー</a>に同意する
+            </label>
+          </div>
+          <button type="submit" class="lp-btn lp-btn-accent lp-btn-submit" id="lp-submit-btn">
+            無料相談を申し込む
+          </button>
+        </form>
+
+        <div id="lp-form-thanks" class="lp-form-thanks" style="display: none;">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <h3>お申し込みありがとうございます</h3>
+          <p>内容を確認のうえ、担当者よりご連絡いたします。<br>しばらくお待ちください。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 会社情報 ===== -->
+    <section class="lp-section lp-company">
+      <div class="lp-container">
+        <div class="lp-company-inner">
+          <h3>株式会社玄風</h3>
+          <table class="lp-company-table">
+            <tr><th>所在地</th><td>福岡県京都郡苅田町神田町三丁目18番地3</td></tr>
+            <tr><th>代表者</th><td>古塘 祐二朗</td></tr>
+            <tr><th>宅建業免許</th><td>福岡県知事（1）第20833号</td></tr>
+            <tr><th>事業内容</th><td>不動産売買・仲介・管理／解体工事業／相続コンサルティング</td></tr>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== フッター ===== -->
+    <footer class="lp-footer">
+      <p>&copy; 2024 株式会社玄風 All rights reserved.</p>
+    </footer>
+
+    <script>
+      const GAS_URL = "https://script.google.com/macros/s/AKfycbyS0J98dyovB5K1yp7b288O3puDtFSA3XHo24Yk9Ote07E4OnVrIIziXS6BXMDSCeBUiw/exec";
+
+      const form = document.getElementById("lp-contact-form") as HTMLFormElement;
+      const thanks = document.getElementById("lp-form-thanks") as HTMLElement;
+      const submitBtn = document.getElementById("lp-submit-btn") as HTMLButtonElement;
+
+      form?.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        submitBtn.disabled = true;
+        submitBtn.textContent = "送信中...";
+
+        const formData = new FormData(form);
+        const concerns = formData.getAll("concern").join("、");
+        const data = {
+          name: formData.get("name"),
+          email: formData.get("email") || "",
+          phone: formData.get("phone"),
+          category: "相続（LP）",
+          message: `【エリア】${formData.get("area") || "未選択"}\n【お悩み】${concerns}\n\n${formData.get("message") || ""}`,
+        };
+
+        try {
+          await fetch(GAS_URL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data),
+          });
+          form.style.display = "none";
+          thanks.style.display = "block";
+        } catch (err) {
+          alert("送信に失敗しました。お手数ですがお電話（050-8884-9984）でお問い合わせください。");
+          submitBtn.disabled = false;
+          submitBtn.textContent = "無料相談を申し込む";
+        }
+      });
+    </script>
+
+  </body>
+</html>
+
+<style>
+  /* ===== LP 基本 ===== */
+  .lp-body {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 64px; /* sticky CTA分 */
+  }
+  .lp-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .lp-section {
+    padding: 64px 0;
+  }
+  .sp-only { display: none; }
+
+  /* ===== 固定CTA ===== */
+  .lp-sticky-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-top: 1px solid var(--color-border);
+    padding: 10px 16px;
+    z-index: 1000;
+    box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
+  }
+  .lp-sticky-inner {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    gap: 10px;
+  }
+  .lp-sticky-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 12px 8px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  .lp-sticky-tel {
+    background: #fff;
+    color: var(--color-primary-dark);
+    border: 2px solid var(--color-primary);
+  }
+  .lp-sticky-form {
+    background: var(--color-accent);
+    color: #fff;
+    border: 2px solid var(--color-accent);
+  }
+
+  /* ===== Hero ===== */
+  .lp-hero {
+    background: linear-gradient(135deg, #1a3a2a 0%, #2e8b57 60%, #3da86a 100%);
+    color: #fff;
+    padding: 80px 0 60px;
+    text-align: center;
+  }
+  .lp-hero-label {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    padding: 6px 20px;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    margin-bottom: 24px;
+    letter-spacing: 1px;
+  }
+  .lp-hero-title {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  .lp-hero-sub {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    opacity: 0.9;
+    margin-bottom: 24px;
+  }
+  .lp-hero-sub strong {
+    color: var(--color-accent);
+    font-weight: 700;
+  }
+  .lp-hero-points {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+  }
+  .lp-hero-point {
+    background: rgba(255,255,255,0.2);
+    padding: 6px 16px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+  .lp-hero-cta {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  /* ===== ボタン共通 ===== */
+  .lp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 32px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s;
+    cursor: pointer;
+    border: none;
+    font-family: var(--font-body);
+  }
+  .lp-btn-accent {
+    background: var(--color-accent);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(245, 166, 35, 0.3);
+  }
+  .lp-btn-accent:hover {
+    background: #e6961a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(245, 166, 35, 0.4);
+  }
+  .lp-btn-white {
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.4);
+  }
+  .lp-btn-white:hover {
+    background: rgba(255,255,255,0.25);
+    color: #fff;
+  }
+  .lp-btn-outline {
+    background: transparent;
+    color: var(--color-primary-dark);
+    border: 2px solid var(--color-primary);
+  }
+  .lp-btn-outline:hover {
+    background: var(--color-primary-bg);
+  }
+
+  /* ===== 見出し共通 ===== */
+  .lp-heading {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--color-primary-dark);
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  .lp-heading-alert {
+    color: #c0392b;
+  }
+  .lp-heading-sub {
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+    margin-bottom: 36px;
+  }
+
+  /* ===== 漫画 ===== */
+  .lp-manga {
+    background: #fff;
+    padding-bottom: 48px;
+  }
+  .manga-panels {
+    max-width: 700px;
+    margin: 32px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 3px solid #222;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+  }
+  .manga-panel {
+    border-bottom: 3px solid #222;
+  }
+  .manga-panel:last-child,
+  .manga-panel-last {
+    border-bottom: none;
+  }
+
+  /* 画像ラップ */
+  .manga-img-wrap {
+    position: relative;
+    overflow: hidden;
+  }
+  .manga-img-wrap img {
+    width: 100%;
+    display: block;
+  }
+
+  /* ナレーションキャプション（コマ1用） */
+  .manga-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.75));
+    padding: 32px 20px 16px;
+  }
+  .manga-caption p {
+    color: #fff;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    margin: 0;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  }
+
+  /* 吹き出し共通 */
+  .manga-balloon {
+    position: absolute;
+    background: #fff;
+    border: 2px solid #333;
+    border-radius: 16px;
+    padding: 10px 14px;
+    max-width: 55%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  }
+  .manga-balloon p {
+    font-size: 0.82rem;
+    line-height: 1.55;
+    color: #333;
+    margin: 0;
+  }
+  .manga-red {
+    color: #c0392b;
+    font-weight: 700;
+    font-size: 1.1em;
+  }
+
+  /* 吹き出しバリエーション */
+  .manga-balloon-think {
+    border-style: dashed;
+    border-color: #888;
+    background: rgba(255,255,255,0.92);
+  }
+  .manga-balloon-shout {
+    border-width: 3px;
+    border-color: #c0392b;
+    background: #fff5f5;
+  }
+  .manga-balloon-discover {
+    border-color: var(--color-accent);
+    background: #fffdf5;
+  }
+  .manga-balloon-green {
+    border-color: var(--color-primary);
+    background: #f4fdf7;
+  }
+  .manga-balloon-happy {
+    border-color: var(--color-primary);
+    background: #f0fdf5;
+  }
+  .manga-balloon-normal {
+    background: #fff;
+  }
+
+  /* 吹き出し位置 */
+  .manga-pos-top-right {
+    top: 10px;
+    right: 12px;
+  }
+  .manga-pos-top-left {
+    top: 10px;
+    left: 12px;
+  }
+  .manga-pos-top-center {
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .manga-pos-bottom-left {
+    bottom: 10px;
+    left: 12px;
+  }
+  .manga-pos-bottom-right {
+    bottom: 10px;
+    right: 12px;
+  }
+  .manga-pos-bottom-right-up {
+    bottom: 55px;
+    right: 12px;
+  }
+  .manga-pos-right {
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+  }
+
+  /* 悩みの雲（コマ5用） */
+  .manga-thought-cloud {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-width: 55%;
+  }
+  .manga-thought-cloud p {
+    font-size: 0.78rem;
+    color: #555;
+    padding: 5px 10px;
+    background: rgba(255,255,255,0.88);
+    border: 1px dashed #aaa;
+    border-radius: 8px;
+    margin: 0;
+    line-height: 1.4;
+    backdrop-filter: blur(2px);
+  }
+
+  /* 弁護士ラベル（コマ8用） */
+  .manga-label-tag {
+    position: absolute;
+    bottom: 10px;
+    left: 14px;
+    font-size: 0.72rem;
+    background: rgba(50,50,50,0.85);
+    color: #fff;
+    padding: 3px 12px;
+    border-radius: 4px;
+  }
+
+  /* 結果チェックリスト（漫画の外） */
+  .manga-result-outside {
+    max-width: 700px;
+    margin: 20px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .manga-result-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--color-primary-bg);
+    padding: 14px 18px;
+    border-radius: 10px;
+    border-left: 4px solid var(--color-primary);
+  }
+  .manga-result-check-icon {
+    width: 22px;
+    height: 22px;
+    background: var(--color-primary);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .manga-result-check-icon::after {
+    content: "✓";
+  }
+  .manga-result-item span:last-child {
+    font-size: 0.9rem;
+    color: var(--color-primary-dark);
+    font-weight: 600;
+  }
+
+  /* 漫画下CTA */
+  .manga-cta {
+    text-align: center;
+    margin-top: 32px;
+  }
+  .manga-cta p {
+    font-size: 1rem;
+    color: var(--color-text);
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+
+  /* 漫画レスポンシブ */
+  @media (max-width: 768px) {
+    .manga-balloon {
+      max-width: 65%;
+      padding: 8px 10px;
+    }
+    .manga-balloon p {
+      font-size: 0.72rem;
+      line-height: 1.45;
+    }
+    .manga-thought-cloud {
+      max-width: 62%;
+    }
+    .manga-thought-cloud p {
+      font-size: 0.68rem;
+      padding: 4px 8px;
+    }
+    .manga-caption p {
+      font-size: 0.75rem;
+    }
+    .manga-result-item span:last-child {
+      font-size: 0.8rem;
+    }
+  }
+
+  /* ===== お悩み ===== */
+  .lp-problems {
+    background: var(--color-bg-light);
+  }
+  .lp-problem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin-top: 32px;
+  }
+  .lp-problem-card {
+    background: #fff;
+    padding: 24px 16px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid var(--color-border);
+  }
+  .lp-problem-icon {
+    margin-bottom: 12px;
+  }
+  .lp-problem-card p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--color-text);
+  }
+  .lp-problem-card strong {
+    color: var(--color-primary-dark);
+  }
+
+  /* ===== リスク ===== */
+  .lp-risk {
+    background: #fdf6f0;
+  }
+  .lp-risk-list {
+    max-width: 700px;
+    margin: 32px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .lp-risk-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    background: #fff;
+    padding: 24px;
+    border-radius: 12px;
+    border-left: 4px solid #c0392b;
+  }
+  .lp-risk-num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    background: #c0392b;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+  .lp-risk-item h3 {
+    font-size: 1rem;
+    color: #c0392b;
+    margin-bottom: 6px;
+  }
+  .lp-risk-item p {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    line-height: 1.7;
+  }
+
+  /* ===== ソリューション ===== */
+  .lp-solution {
+    background: var(--color-primary-bg);
+  }
+  .lp-solution-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 36px;
+  }
+  .lp-solution-card {
+    background: #fff;
+    padding: 28px;
+    border-radius: 12px;
+    border-top: 3px solid var(--color-primary);
+  }
+  .lp-solution-card-accent {
+    border-top-color: var(--color-accent);
+    background: #fffdf7;
+  }
+  .lp-solution-num {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 8px;
+  }
+  .lp-solution-card-accent .lp-solution-num {
+    color: var(--color-accent);
+  }
+  .lp-solution-card h3 {
+    font-size: 1.05rem;
+    color: var(--color-primary-dark);
+    margin-bottom: 10px;
+  }
+  .lp-solution-card p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--color-text-light);
+  }
+  .lp-solution-note {
+    margin-top: 8px;
+    font-size: 0.8rem !important;
+    color: var(--color-text-light) !important;
+    opacity: 0.8;
+  }
+
+  /* ===== 中間CTA ===== */
+  .lp-mid-cta {
+    background: linear-gradient(135deg, #1a3a2a 0%, #2e8b57 100%);
+    padding: 48px 0;
+    text-align: center;
+  }
+  .lp-mid-cta-text {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: #fff;
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+
+  /* ===== 選ばれる理由 ===== */
+  .lp-reason-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin-top: 32px;
+  }
+  .lp-reason-card {
+    background: var(--color-bg-light);
+    padding: 28px 20px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid var(--color-border);
+  }
+  .lp-reason-num {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 12px;
+  }
+  .lp-reason-card h3 {
+    font-size: 1rem;
+    color: var(--color-primary-dark);
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+  .lp-reason-card p {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    line-height: 1.7;
+  }
+
+  /* ===== 流れ ===== */
+  .lp-flow {
+    background: var(--color-bg-light);
+  }
+  .lp-flow-list {
+    max-width: 600px;
+    margin: 32px auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .lp-flow-item {
+    background: #fff;
+    padding: 24px 28px;
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+    width: 100%;
+  }
+  .lp-flow-step {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+  }
+  .lp-flow-item h3 {
+    font-size: 1.05rem;
+    color: var(--color-primary-dark);
+    margin-bottom: 6px;
+  }
+  .lp-flow-item p {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    line-height: 1.7;
+  }
+  .lp-flow-arrow {
+    padding: 8px 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* ===== FAQ ===== */
+  .lp-faq-list {
+    max-width: 700px;
+    margin: 32px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .lp-faq-item {
+    background: var(--color-bg-light);
+    border-radius: 10px;
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+  }
+  .lp-faq-item summary {
+    padding: 18px 24px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    padding-right: 48px;
+    color: var(--color-text);
+  }
+  .lp-faq-item summary::-webkit-details-marker { display: none; }
+  .lp-faq-item summary::after {
+    content: "+";
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+  .lp-faq-item[open] summary::after {
+    content: "−";
+  }
+  .lp-faq-item p {
+    padding: 0 24px 18px;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--color-text-light);
+  }
+
+  /* ===== フォーム ===== */
+  .lp-form-section {
+    background: #fff;
+  }
+  .lp-form {
+    max-width: 600px;
+    margin: 32px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .lp-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .lp-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .lp-form-group > label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+  .lp-required {
+    color: #e74c3c;
+    font-size: 0.75rem;
+    margin-left: 4px;
+  }
+  .lp-form-group select,
+  .lp-form-group input,
+  .lp-form-group textarea {
+    padding: 14px 16px;
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-family: var(--font-body);
+    background: var(--color-bg-light);
+    transition: all 0.3s;
+  }
+  .lp-form-group select:focus,
+  .lp-form-group input:focus,
+  .lp-form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.1);
+    background: #fff;
+  }
+  .lp-form-group input::placeholder,
+  .lp-form-group textarea::placeholder {
+    color: #bbb;
+  }
+  .lp-checkbox-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 4px;
+  }
+  .lp-checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 8px 12px;
+    background: var(--color-bg-light);
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    transition: all 0.2s;
+  }
+  .lp-checkbox-group label:hover {
+    border-color: var(--color-primary);
+    background: var(--color-primary-bg);
+  }
+  .lp-checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--color-primary);
+  }
+  .lp-form-privacy {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+  }
+  .lp-form-privacy label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+  .lp-form-privacy input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--color-primary);
+  }
+  .lp-form-privacy a {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+  .lp-btn-submit {
+    width: 100%;
+    justify-content: center;
+    padding: 18px;
+    font-size: 1.1rem;
+  }
+  .lp-btn-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  /* Thanks */
+  .lp-form-thanks {
+    text-align: center;
+    padding: 48px 20px;
+    background: var(--color-primary-bg);
+    border-radius: 16px;
+  }
+  .lp-form-thanks h3 {
+    font-size: 1.3rem;
+    color: var(--color-primary-dark);
+    margin: 16px 0 12px;
+  }
+  .lp-form-thanks p {
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+    line-height: 1.8;
+  }
+
+  /* ===== 会社情報 ===== */
+  .lp-company {
+    background: var(--color-bg-light);
+    padding: 40px 0;
+  }
+  .lp-company-inner {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .lp-company-inner h3 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--color-primary-dark);
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  .lp-company-table {
+    width: 100%;
+    font-size: 0.85rem;
+    border-collapse: collapse;
+  }
+  .lp-company-table th {
+    text-align: left;
+    padding: 10px 12px;
+    color: var(--color-text-light);
+    font-weight: 600;
+    width: 120px;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .lp-company-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  /* ===== フッター ===== */
+  .lp-footer {
+    background: var(--color-bg-dark);
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    padding: 20px;
+    font-size: 0.8rem;
+  }
+
+  /* ===== レスポンシブ ===== */
+  @media (max-width: 768px) {
+    .sp-only { display: inline; }
+    .lp-hero { padding: 60px 0 48px; }
+    .lp-hero-title { font-size: 1.6rem; }
+    .lp-hero-sub { font-size: 0.9rem; }
+    .lp-section { padding: 48px 0; }
+    .lp-heading { font-size: 1.3rem; }
+
+    .lp-problem-grid {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .lp-problem-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-align: left;
+      padding: 16px 20px;
+    }
+    .lp-problem-icon { margin-bottom: 0; flex-shrink: 0; }
+    .lp-problem-card p br { display: none; }
+
+    .lp-solution-grid { grid-template-columns: 1fr; }
+    .lp-reason-grid { grid-template-columns: 1fr; }
+    .lp-form-row { grid-template-columns: 1fr; }
+    .lp-checkbox-group { grid-template-columns: 1fr; }
+  }
+</style>
