@@ -153,7 +153,7 @@ import "../../styles/global.css";
             <div class="manga-img-wrap">
               <img src="/images/1-8-10.png" alt="顧問弁護士が書類を見せながら説明、玄風スタッフも同席" />
               <div class="manga-scene-title">法律分野は顧問弁護士をご紹介</div>
-              <div class="manga-balloon manga-balloon-green manga-pos-top-center">
+              <div class="manga-balloon manga-balloon-green manga-pos-bottom-center">
                 <p>佐藤さん、法律分野のご相談については<br><strong>お任せください。</strong></p>
               </div>
               <div class="manga-label-tag">顧問弁護士</div>
@@ -833,6 +833,11 @@ import "../../styles/global.css";
   }
   .manga-pos-top-center {
     top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .manga-pos-bottom-center {
+    bottom: 55px;
     left: 50%;
     transform: translateX(-50%);
   }
