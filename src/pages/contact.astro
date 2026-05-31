@@ -76,6 +76,7 @@ import Base from "../layouts/Base.astro";
             <label for="message">ご相談内容の詳細 <span class="required">必須</span></label>
             <textarea id="message" name="message" rows="6" required placeholder="お気軽にご記入ください"></textarea>
           </div>
+          <p class="form-privacy-notice">ご入力いただいた個人情報は、お問合せへの対応およびサービス提供のために利用いたします。詳細は<a href="/privacy/" target="_blank">プライバシーポリシー</a>をご確認ください。</p>
           <div class="form-privacy">
             <label>
               <input type="checkbox" id="privacy-check" required>
@@ -227,6 +228,16 @@ import Base from "../layouts/Base.astro";
   .form-group input::placeholder,
   .form-group textarea::placeholder {
     color: #bbb;
+  }
+  .form-privacy-notice {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin-bottom: 12px;
+  }
+  .form-privacy-notice a {
+    color: var(--color-primary);
+    text-decoration: underline;
   }
   .form-privacy {
     font-size: 0.85rem;

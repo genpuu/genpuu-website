@@ -471,6 +471,7 @@ import "../../styles/global.css";
             <label for="lp-message">ご相談内容（任意）</label>
             <textarea id="lp-message" name="message" rows="4" placeholder="物件の所在地や状況など、わかる範囲でご記入ください"></textarea>
           </div>
+          <p class="lp-form-privacy-notice">ご入力いただいた個人情報は、お問合せへの対応およびサービス提供のために利用いたします。詳細は<a href="/privacy/" target="_blank">プライバシーポリシー</a>をご確認ください。</p>
           <div class="lp-form-privacy">
             <label>
               <input type="checkbox" id="lp-privacy-check" required>
@@ -1328,6 +1329,16 @@ import "../../styles/global.css";
     width: 18px;
     height: 18px;
     accent-color: var(--color-primary);
+  }
+  .lp-form-privacy-notice {
+    font-size: 0.82rem;
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin-bottom: 12px;
+  }
+  .lp-form-privacy-notice a {
+    color: var(--color-primary);
+    text-decoration: underline;
   }
   .lp-form-privacy {
     font-size: 0.85rem;
