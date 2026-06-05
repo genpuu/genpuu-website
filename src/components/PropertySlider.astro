@@ -1,0 +1,280 @@
+---
+import { getCollection } from "astro:content";
+
+const allProperties = await getCollection("properties");
+const properties = allProperties
+  .filter((p) => p.data.status !== "成約済")
+  .sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
+
+const statusColor: Record<string, string> = {
+  "販売中": "#2e8b57",
+  "商談中": "#e67e22",
+};
+---
+
+<section class="section property-section" id="property">
+  <div class="container">
+    <h2 class="section-title fade-in">物件情報</h2>
+    <p class="section-subtitle fade-in">Property</p>
+
+    <div class="slider-wrapper fade-in">
+      <button class="slider-btn slider-prev" aria-label="前へ">&#8249;</button>
+      <div class="slider-track-container">
+        <div class="slider-track" id="propertySlider">
+          {properties.map((prop) => (
+            <a href={`/property/${prop.id}/`} class="property-card">
+              <div class="property-img-wrap">
+                <img src={prop.data.image} alt={prop.data.title} loading="lazy" />
+                <span class="property-status" style={`background:${statusColor[prop.data.status] ?? '#888'}`}>
+                  {prop.data.status}
+                </span>
+                <span class="property-type-badge">{prop.data.type}</span>
+              </div>
+              <div class="property-info">
+                <p class="property-price">{prop.data.price}</p>
+                <h3 class="property-title">{prop.data.title}</h3>
+                {prop.data.address && <p class="property-address">{prop.data.address}</p>}
+                {prop.data.appeal && <p class="property-appeal">{prop.data.appeal}</p>}
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+      <button class="slider-btn slider-next" aria-label="次へ">&#8250;</button>
+    </div>
+
+    <div class="slider-dots" id="sliderDots"></div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const track = document.getElementById("propertySlider") as HTMLElement;
+    const prevBtn = document.querySelector(".slider-prev") as HTMLElement;
+    const nextBtn = document.querySelector(".slider-next") as HTMLElement;
+    const dotsContainer = document.getElementById("sliderDots") as HTMLElement;
+    if (!track || !prevBtn || !nextBtn || !dotsContainer) return;
+
+    const cards = track.querySelectorAll(".property-card");
+    const totalCards = cards.length;
+    let currentIndex = 0;
+
+    function getVisibleCount() {
+      return window.innerWidth <= 768 ? 1 : Math.min(3, totalCards);
+    }
+
+    function getMaxIndex() {
+      return Math.max(0, totalCards - getVisibleCount());
+    }
+
+    function updateSlider() {
+      const card = cards[0] as HTMLElement;
+      const gap = 24;
+      const cardWidth = card.offsetWidth + gap;
+      track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+
+      // Update dots
+      const maxIdx = getMaxIndex();
+      dotsContainer.innerHTML = "";
+      for (let i = 0; i <= maxIdx; i++) {
+        const dot = document.createElement("button");
+        dot.className = `slider-dot${i === currentIndex ? " active" : ""}`;
+        dot.setAttribute("aria-label", `スライド${i + 1}`);
+        dot.addEventListener("click", () => { currentIndex = i; updateSlider(); });
+        dotsContainer.appendChild(dot);
+      }
+
+      prevBtn.style.opacity = currentIndex === 0 ? "0.3" : "1";
+      nextBtn.style.opacity = currentIndex >= maxIdx ? "0.3" : "1";
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) { currentIndex--; updateSlider(); }
+    });
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < getMaxIndex()) { currentIndex++; updateSlider(); }
+    });
+
+    // Touch swipe
+    let touchStartX = 0;
+    track.addEventListener("touchstart", (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener("touchend", (e) => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) {
+        if (diff > 0 && currentIndex < getMaxIndex()) currentIndex++;
+        else if (diff < 0 && currentIndex > 0) currentIndex--;
+        updateSlider();
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      if (currentIndex > getMaxIndex()) currentIndex = getMaxIndex();
+      updateSlider();
+    });
+
+    updateSlider();
+  });
+</script>
+
+<style>
+  .property-section { background: var(--color-bg-light); }
+
+  .slider-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+  }
+
+  .slider-btn {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px solid var(--color-primary);
+    background: #fff;
+    color: var(--color-primary);
+    font-size: 1.6rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    z-index: 2;
+  }
+  .slider-btn:hover {
+    background: var(--color-primary);
+    color: #fff;
+  }
+
+  .slider-track-container {
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .slider-track {
+    display: flex;
+    gap: 24px;
+    transition: transform 0.4s ease;
+  }
+
+  .property-card {
+    min-width: calc((100% - 48px) / 3);
+    max-width: calc((100% - 48px) / 3);
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--color-text);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: all 0.3s;
+    border: 1px solid transparent;
+    flex-shrink: 0;
+  }
+  .property-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    border-color: var(--color-primary);
+  }
+
+  .property-img-wrap {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background: #f0f0f0;
+  }
+  .property-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .property-status {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    color: #fff;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+
+  .property-type-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
+  }
+
+  .property-info {
+    padding: 20px;
+  }
+
+  .property-price {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    margin-bottom: 6px;
+  }
+
+  .property-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+
+  .property-address {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    margin-bottom: 4px;
+  }
+
+  .property-appeal {
+    font-size: 0.85rem;
+    color: var(--color-primary-dark);
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  .slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+  }
+
+  .slider-dots :global(.slider-dot) {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid var(--color-primary);
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.3s;
+  }
+  .slider-dots :global(.slider-dot.active) {
+    background: var(--color-primary);
+  }
+
+  @media (max-width: 768px) {
+    .property-card {
+      min-width: 100%;
+      max-width: 100%;
+    }
+    .slider-btn {
+      width: 36px;
+      height: 36px;
+      font-size: 1.3rem;
+    }
+  }
+</style>

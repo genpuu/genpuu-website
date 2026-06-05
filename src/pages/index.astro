@@ -1,5 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
+import PropertySlider from "../components/PropertySlider.astro";
 import { getCollection } from "astro:content";
 
 const allPosts = await getCollection("blog");
@@ -147,6 +148,9 @@ const categoryMap: Record<string, string> = {
       </div>
     </div>
   </section>
+
+  <!-- ===== PROPERTY ===== -->
+  <PropertySlider />
 
   <!-- ===== STRENGTH ===== -->
   <section class="section strength-section">
