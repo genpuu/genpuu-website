@@ -8,9 +8,10 @@ import "../styles/global.css";
 interface Props {
   title: string;
   description?: string;
+  isHome?: boolean;
 }
 
-const { title, description = "不動産・相続のお悩みを解決に導きます。株式会社玄風は提携士業と連携し、相続コンサルティングから不動産売却まで一括サポートします。" } = Astro.props;
+const { title, description = "不動産・相続のお悩みを解決に導きます。株式会社玄風は提携士業と連携し、相続コンサルティングから不動産売却まで一括サポートします。", isHome = false } = Astro.props;
 ---
 
 <!doctype html>
@@ -26,7 +27,7 @@ const { title, description = "不動産・相続のお悩みを解決に導き�
     <meta property="og:url" content={Astro.url.href} />
     <meta property="og:site_name" content="株式会社玄風" />
     <meta name="twitter:card" content="summary_large_image" />
-    <title>{title} | 玄風：不動産・相続に関するお悩みを解決</title>
+    <title>{isHome ? title : `${title} | 玄風：不動産・相続に関するお悩みを解決`}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
