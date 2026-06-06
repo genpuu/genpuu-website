@@ -12,6 +12,42 @@ interface Props {
 }
 
 const { title, description = "不動産・相続のお悩みを解決に導きます。株式会社玄風は提携士業と連携し、相続コンサルティングから不動産売却まで一括サポートします。", isHome = false } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, "https://genpuu.com").href;
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  "name": "株式会社玄風",
+  "url": "https://genpuu.com",
+  "logo": "https://genpuu.com/favicon.svg",
+  "image": "https://genpuu.com/images/og-image.png",
+  "telephone": "050-8884-9984",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "神田町三丁目18番地3",
+    "addressLocality": "京都郡苅田町",
+    "addressRegion": "福岡県",
+    "postalCode": "800-0344",
+    "addressCountry": "JP"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 33.7764,
+    "longitude": 131.0006
+  },
+  "areaServed": ["北九州市", "苅田町", "行橋市", "京築エリア", "筑豊エリア"],
+  "description": "福岡県京築エリアで相続コンサルティング・不動産売買・空き家活用を提供。顧問弁護士と連携し、相続から売却まで一括対応。",
+  "openingHours": "Mo-Fr 09:00-18:00",
+  "priceRange": "無料相談あり"
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "株式会社玄風",
+  "url": "https://genpuu.com"
+};
 ---
 
 <!doctype html>
@@ -20,15 +56,18 @@ const { title, description = "不動産・相続のお悩みを解決に導き�
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
     <meta property="og:title" content={`${title} | 株式会社玄風`} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content="https://genpuu.com/images/og-image.png" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:url" content={canonicalURL} />
     <meta property="og:site_name" content="株式会社玄風" />
     <meta name="twitter:card" content="summary_large_image" />
     <title>{isHome ? title : `${title} | 玄風：不動産・相続に関するお悩みを解決`}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script type="application/ld+json" set:html={JSON.stringify(organizationJsonLd)} />
+    {isHome && <script type="application/ld+json" set:html={JSON.stringify(websiteJsonLd)} />}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

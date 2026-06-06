@@ -74,7 +74,7 @@ const infoRowsDef: [string, string | undefined][] = [
 const infoRows = infoRowsDef.filter(([, v]) => v && v.trim() !== "") as [string, string][];
 ---
 
-<Base title={`${d.title} | 物件情報`}>
+<Base title={`${d.title} | 物件情報`} description={`${d.address}の${d.type}。${d.price}。${d.title}の詳細情報。株式会社玄風`}>
 
   <section class="property-detail-hero">
     <div class="container">
