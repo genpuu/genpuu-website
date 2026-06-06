@@ -19,6 +19,13 @@ const { title, description = "不動産・相続のお悩みを解決に導き�
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <meta property="og:title" content={`${title} | 株式会社玄風`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://genpuu.com/images/og-image.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:site_name" content="株式会社玄風" />
+    <meta name="twitter:card" content="summary_large_image" />
     <title>{title} | 株式会社玄風</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
