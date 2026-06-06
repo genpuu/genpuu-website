@@ -1,0 +1,112 @@
+{
+  "$ref": "#/definitions/properties",
+  "definitions": {
+    "properties": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "price": {
+          "type": "string"
+        },
+        "appeal": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "販売中",
+            "商談中",
+            "成約済"
+          ]
+        },
+        "order": {
+          "type": "number",
+          "default": 0
+        },
+        "address": {
+          "type": "string"
+        },
+        "access": {
+          "type": "string"
+        },
+        "layout": {
+          "type": "string"
+        },
+        "landArea": {
+          "type": "string"
+        },
+        "buildingArea": {
+          "type": "string"
+        },
+        "elementarySchool": {
+          "type": "string"
+        },
+        "juniorHighSchool": {
+          "type": "string"
+        },
+        "floors": {
+          "type": "string"
+        },
+        "landRight": {
+          "type": "string"
+        },
+        "buildYear": {
+          "type": "string"
+        },
+        "structure": {
+          "type": "string"
+        },
+        "parking": {
+          "type": "string"
+        },
+        "cityPlanning": {
+          "type": "string"
+        },
+        "zoning": {
+          "type": "string"
+        },
+        "landCategory": {
+          "type": "string"
+        },
+        "buildingCoverageRatio": {
+          "type": "string"
+        },
+        "terrain": {
+          "type": "string"
+        },
+        "roadAccess": {
+          "type": "string"
+        },
+        "currentState": {
+          "type": "string"
+        },
+        "delivery": {
+          "type": "string"
+        },
+        "transactionType": {
+          "type": "string"
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "type",
+        "price",
+        "image",
+        "status"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

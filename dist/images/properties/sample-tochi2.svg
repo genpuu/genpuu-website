@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+  <rect width="600" height="400" fill="#fff3e0"/>
+  <rect x="50" y="180" width="500" height="160" fill="#ffcc80" rx="8"/>
+  <text x="300" y="140" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#e65100">SAMPLE</text>
+  <text x="300" y="270" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#bf360c">土地 60坪</text>
+</svg>
