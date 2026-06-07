@@ -4,7 +4,7 @@ type: "中古戸建"
 price: "1,380万円"
 appeal: "2020年に水回り設備のリフォーム済！駐車場は車種により複数台可能！"
 image: "/images/properties/小波瀬2丁目戸建/main.jpg"
-status: "販売中"
+status: "取扱中"
 order: 5
 address: "京都郡苅田町小波瀬2丁目8-16"
 access: "日豊本線小波瀬西工大前駅 徒歩6分"

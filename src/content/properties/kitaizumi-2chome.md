@@ -4,7 +4,7 @@ type: "中古戸建"
 price: "1,598万円"
 appeal: "令和8年1月内外装リフォーム済！駐車場3台可！オール電化の家！"
 image: "/images/properties/北泉2丁目戸建/main.jpg"
-status: "販売中"
+status: "取扱中"
 order: 1
 address: "行橋市北泉2丁目25-1"
 access: "日豊本線南行橋駅 徒歩12分"

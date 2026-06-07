@@ -4,7 +4,7 @@ type: "中古戸建"
 price: "1,498万円"
 appeal: "内外装リフォーム済み。駐車場3台分以上！"
 image: "/images/properties/南大橋2丁目戸建/main.jpg"
-status: "販売中"
+status: "取扱中"
 order: 2
 address: "行橋市南大橋2丁目"
 access: "日豊本線南行橋駅 徒歩24分"

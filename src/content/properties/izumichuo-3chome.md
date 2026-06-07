@@ -4,7 +4,7 @@ type: "中古戸建"
 price: "1,498万円"
 appeal: "令和7年10月内外装リフォーム済！車種によって駐車場3台可！"
 image: "/images/properties/泉中央3丁目戸建/main.jpg"
-status: "販売中"
+status: "取扱中"
 order: 6
 address: "行橋市泉中央3丁目13-33"
 access: "日豊本線南行橋駅 徒歩15分"

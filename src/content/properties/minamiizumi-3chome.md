@@ -4,7 +4,7 @@ type: "中古戸建"
 price: "1,298万円"
 appeal: "内外装リフォーム済！駐車場は車庫タイプ！"
 image: "/images/properties/南泉3丁目戸建/main.jpg"
-status: "販売中"
+status: "取扱中"
 order: 4
 address: "行橋市南泉3丁目13番22号"
 access: "平成筑豊鉄道今川河童駅 徒歩23分"

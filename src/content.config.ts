@@ -22,7 +22,7 @@ const properties = defineCollection({
     price: z.string(),
     appeal: z.string().optional(),
     image: z.string(),
-    status: z.enum(["販売中", "商談中", "成約済"]),
+    status: z.enum(["取扱中", "商談中", "成約済"]),
     order: z.number().default(0),
     // 詳細（物件概要テーブル）
     address: z.string().optional(),

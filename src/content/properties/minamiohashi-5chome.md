@@ -4,7 +4,7 @@ type: "中古戸建"
 price: "1,380万円"
 appeal: "内外装リフォーム済！車種により駐車場3台可能！"
 image: "/images/properties/南大橋5丁目戸建/main.jpg"
-status: "販売中"
+status: "取扱中"
 order: 3
 address: "行橋市南大橋5丁目7-21"
 access: "日豊本線南行橋駅 徒歩14分"
