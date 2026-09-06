@@ -22,8 +22,9 @@ const properties = defineCollection({
     price: z.string(),
     appeal: z.string().optional(),
     image: z.string(),
-    status: z.enum(["取扱中", "商談中", "成約済"]),
+    status: z.enum(["取扱中", "商談中", "成約済", "非公開"]),
     order: z.number().default(0),
+    link: z.string().optional(), // カードのリンク先を詳細ページ以外にする場合（例: /private/）
     // 詳細（物件概要テーブル）
     address: z.string().optional(),
     access: z.string().optional(),

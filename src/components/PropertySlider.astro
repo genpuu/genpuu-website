@@ -9,6 +9,7 @@ const properties = allProperties
 const statusColor: Record<string, string> = {
   "取扱中": "#2e8b57",
   "商談中": "#e67e22",
+  "非公開": "#b8963e",
 };
 ---
 
@@ -22,7 +23,7 @@ const statusColor: Record<string, string> = {
       <div class="slider-track-container">
         <div class="slider-track" id="propertySlider">
           {properties.map((prop) => (
-            <a href={`/property/${prop.id}/`} class="property-card">
+            <a href={prop.data.link ?? `/property/${prop.id}/`} class="property-card">
               <div class="property-img-wrap">
                 <img src={prop.data.image} alt={prop.data.title} loading="lazy" />
                 <span class="property-status" style={`background:${statusColor[prop.data.status] ?? '#888'}`}>

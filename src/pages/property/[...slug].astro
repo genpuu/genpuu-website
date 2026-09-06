@@ -5,7 +5,8 @@ import fs from "node:fs";
 import path from "node:path";
 
 export async function getStaticPaths() {
-  const properties = await getCollection("properties");
+  const allProperties = await getCollection("properties");
+  const properties = allProperties.filter((p) => !p.data.link); // link指定カード（非公開案内等）は詳細ページを作らない
   return properties.map((prop) => {
     // 画像フォルダから全画像を取得
     const imageDir = prop.data.image.replace(/\/[^/]+$/, "");
